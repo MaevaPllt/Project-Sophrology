@@ -1,23 +1,24 @@
 <?php
 
+
 namespace App\Controller;
+
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Cmf\Bundle\SeoBundle\SeoMetadata;
 
 
-class HomeController extends AbstractController
+class SophrologyController extends AbstractController
 {
 
     /**
-     * @Route("/", name="home")
+     * @Route("/sophrologie/", name="sophrology")
      * @return Response
      */
     public function index(): Response
     {
-        return $this->render("home/index.html.twig");
+        return $this->render("sophrology/index.html.twig");
     }
 }
