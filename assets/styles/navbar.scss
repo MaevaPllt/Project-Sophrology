@@ -10,6 +10,19 @@
   height: 20%;
 }
 
+.link {
+  width: 10%;
+  height: 10%;
+}
+
+.link-network:hover {
+    transform: scale(1.3);
+}
+
+.link-network {
+  transition: all 200ms;
+}
+
 @media screen and (max-width: 1000px) {
   .navbar-primary {
     display: flex;
@@ -21,3 +34,5 @@
     width: 90%;
   }
 }
+
+
