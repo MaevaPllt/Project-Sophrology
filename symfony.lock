@@ -117,6 +117,12 @@
     "psr/event-dispatcher": {
         "version": "1.0.0"
     },
+    "psr/http-client": {
+        "version": "1.0.1"
+    },
+    "psr/http-message": {
+        "version": "1.0.1"
+    },
     "psr/link": {
         "version": "1.0.0"
     },
@@ -134,6 +140,12 @@
         "files": [
             "config/packages/sensio_framework_extra.yaml"
         ]
+    },
+    "sonata-project/exporter": {
+        "version": "2.6.2"
+    },
+    "sonata-project/seo-bundle": {
+        "version": "2.13.0"
     },
     "symfony/asset": {
         "version": "v5.2.3"

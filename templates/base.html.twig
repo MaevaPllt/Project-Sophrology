@@ -4,7 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="{{ asset('build/images/colour.png') }}" />
-        <title>{% block title %}Inspire & Expire{% endblock %}</title>
+        <title>{% block title %}Inspire & Expire Charlotte Ricordeau Sophrologue à Saint-Denis-En-Val{% endblock %}</title>
+
+        {% block metadata %}
+        <meta name="description" content="Sophrologue sur la métropole d'Orléans, Charlotte Ricordeau vous accueille à son cabinet pour des séances individuelles ou collectives."/>
+        <meta name="keywords" content=" Inspire, Expire, Charlotte Ricordeau, sophrologue, sophrologie, Orléans, Saint-Denis-En-val, séance, collective, individuelle"/>
+        {% endblock %}
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
