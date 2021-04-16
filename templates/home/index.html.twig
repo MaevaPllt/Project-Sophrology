@@ -5,5 +5,109 @@
 {% endblock %}
 
 {% block body %}
-    <h1> Bonjour</h1>
+    <section class="row bg-primary justify-content-around mx-0 my-5 py-5">
+        <div class="col-lg-5 col-md-5 mb-3 d-flex align-items-center">
+            <img class="shadow p-1 lack w-100 " src="{{ asset('build/images/horaire.jpg') }}" alt="image-horaire"/>
+        </div>
+        <div class="col-lg-5 col-md-5">
+            <h1 class="text-center text-uppercase">Charlotte Ricordeau</h1>
+            <h2 class="text-center mb-3">Sophrologue, Diététicienne-Nutritionniste </h2>
+            <div class="mb-4">
+                <p>
+                    En tant que Sophrologue,  je me mets à l’écoute de vos ressentis et de vos émotions. Par des techniques éprouvées comme le "lâcher prise" que vous vous autorisez lors des séances ou la maîtrise de la respiration que je vous ferai pratiquer, je vous accompagnerai dans votre parcours vers un sentiment de bien-être.
+                    La sophrologie m’a bien aidée pour mieux gérer certaines situations.
+                    J’ai vite ressenti le besoin de faire connaître cette méthode autour de moi et je me suis formée pour la partager avec vous.
+                <p>
+                <p>
+                    En tant que Diététicienne, je mets en œuvre une méthode cartésienne et scientifique, basée sur des connaissances acquises dans le domaine de la physiologie du corps humain et du métabolisme biochimique de l’organisme.
+                    Aussi, j'ai plaisir à donner des conseils nutritionnels pour votre santé. En recevant certains patients, j'ai pris conscience que l’évocation d’un repas peut-être source de stress pour différentes raisons: frustrations dues à des régimes trop restrictifs, blessures psychologiques d'enfance... Dans les cas où la solution ne se trouverait pas que dans l'assiette, je vous accompagnerai vers un changement positif grâce à la sophrologie.
+                    Mes deux métiers m’aident à avoir le recul nécessaire pour mieux vous conseiller et prendre en compte la globalité de votre personne dans une approche combinée corps-esprit.
+                </p>
+            </div>
+            <div class="row mx-0 justify-content-center">
+                <a class="btn btn-light border-secondary m-2 col-lg-5 diplomes" href="" role="button">
+                    <p class="font-weight-bold">Spécialisée en Équilibre pondéral et Comportement Adapté (EPCA)</p>
+                </a>
+                <a class="btn btn-light border-secondary m-2 col-lg-5 diplomes" href="" role="button">
+                    <p class="font-weight-bold">BTS Diététique à Paris</p>
+                </a>
+            </div>
+            <div class="row mx-0 justify-content-center">
+                <a class="btn btn-light border-secondary m-2 col-lg-5 diplomes" href="" role="button">
+                    <p class="font-weight-bold">Certifiée au Répertoire Nationale de Certification Professionnelle (RNCP)</p>
+                </a>
+                <a class="btn btn-light border-secondary m-2 col-lg-5 diplomes" href="" role="button">
+                    <p class="font-weight-bold">Diplômée de l’Ecole Supérieure de Sophrologie Appliquée (ESSA) de Vincennes</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-5 py-5">
+            <h1 class="text-center pb-4 text-secondary text-uppercase">Les nouvelles actualités</h1>
+        <div class="row justify-content-center mx-0 mx-2">
+                <div class="col-lg-3 m-4 p-2 bg-primary">
+                    <img class="shadow p-1 lack w-100" src="{{ asset('build/images/smoothie.jpg') }}" alt="image"/>
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">date de l'actualité</p>
+                        <p class="card-text">Spécial Jeunes Mamans ! Une séance visio pour profitez depuis chez vous !</p>
+                        <a class="nav-link text-white btn btn-secondary mx-4" href="">Voir le détail</a>
+                    </div>
+                </div>
+            <div class="col-lg-3 m-4 p-2 bg-primary">
+                <img class="shadow p-1 lack w-100" src="{{ asset('build/images/smoothie.jpg') }}" alt="image"/>
+                <div class="card-body">
+                    <p class="card-text font-weight-bold">date de l'actualité</p>
+                    <p class="card-text">Spécial Jeunes Mamans ! Une séance visio pour profitez depuis chez vous !</p>
+                    <a class="nav-link text-white btn btn-secondary mx-4" href="">Voir le détail</a>
+                </div>
+            </div>
+            <div class="col-lg-3 m-4 p-2 bg-primary">
+                <img class="shadow p-1 lack w-100" src="{{ asset('build/images/smoothie.jpg') }}" alt="image"/>
+                <div class="card-body">
+                    <p class="card-text font-weight-bold">date de l'actualité</p>
+                    <p class="card-text">Spécial Jeunes Mamans ! Une séance visio pour profitez depuis chez vous !</p>
+                    <a class="nav-link text-white btn btn-secondary mx-4" href="">Voir le détail</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-5 py-2 container">
+        <h1 class="text-center mb-4 text-secondary text-uppercase">Ils m'ont fait confiance</h1>
+        <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="quotes mb-4" src="{{ asset('build/images/left-quotes.png') }}"
+                         alt="image guillemets"/>
+                    <p> Chaque nuit j'avais mon rituel où je me levais pour manger. Je ne pouvais
+                        pas m'en empêcher. Je grossissais à vu d'œil, je me sentais énorme. Je ne savais pas quoi faire
+                        pour m'arrêter. Je me sentais tellement triste... Quand j'ai entendu parlé de la sophrologie de
+                        Charlotte, j'ai tenté l'expérience. Aujourd'hui, je n'ai plus de compulsions alimentaire la nuit.
+                        Je me sens de mieux en mieux et je comble peu à peu le vide en moi, je retrouve progressivement
+                        confiance en moi et je m'épanouie</p>
+                    <p class="font-weight-bold">Diane, 47 ans, Je me levais la nuit pour manger, Le 05/02/2021<p>
+                    <div class="d-flex justify-content-end">
+                        <img class="quotes" src="{{ asset('build/images/right-quotes.png') }}"
+                             alt="image guillemets"/>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="quotes mb-4" src="{{ asset('build/images/left-quotes.png') }}"
+                         alt="image guillemets"/>
+                    <p> Chaque nuit j'avais mon rituel où je me levais pour manger. Je ne pouvais
+                        pas m'en empêcher. Je grossissais à vu d'œil, je me sentais énorme. Je ne savais pas quoi faire
+                        pour m'arrêter. Je me sentais tellement triste... Quand j'ai entendu parlé de la sophrologie de
+                        Charlotte, j'ai tenté l'expérience. Aujourd'hui, je n'ai plus de compulsions alimentaire la nuit.
+                        Je me sens de mieux en mieux et je comble peu à peu le vide en moi, je retrouve progressivement
+                        confiance en moi et je m'épanouie</p>
+                    <p class="font-weight-bold">Diane, 47 ans, Je me levais la nuit pour manger, Le 05/02/2021<p>
+                    <div class="d-flex justify-content-end">
+                        <img class="quotes" src="{{ asset('build/images/right-quotes.png') }}"
+                             alt="image guillemets"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
