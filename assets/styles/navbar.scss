@@ -31,16 +31,15 @@
   transition: all 200ms;
 }
 
+.logo-responsive {
+  border-radius: $border;
+}
+
 
 @media screen and (max-width: 1000px) {
-  .navbar-primary {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-  }
 
-  .logo {
-    width: 90%;
+  .background-image {
+    display: none;
   }
 }
 
