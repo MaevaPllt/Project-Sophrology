@@ -2,7 +2,7 @@
     {{ encore_entry_link_tags('navbar') }}
 {% endblock %}
 <nav>
-   <div class="background-image">
+    <div class="background-image">
         <div class="navbar-primary d-flex justify-content-center">
             <img class="logo my-3 mx-4" src="{{ asset('build/images/logo.png') }}"/>
             <div class="align-items-end my-4">
@@ -10,14 +10,15 @@
                 <h3 class="title text-center">Cabinet de Sophrologie - Orléans Métropole</h3>
                 <h3 class="title text-center"></h3>
                 <div class="d-flex justify-content-center meet">
-                <a href="" class="btn btn-light border-secondary p-2 font-weight-bold ">Prendre Rendez-Vous</a>
+                    <a href="" class="btn btn-light border-secondary p-2 font-weight-bold ">Prendre Rendez-Vous</a>
                 </div>
             </div>
         </div>
-   </div>
+    </div>
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <img class="bg-light logo p-2 d-lg-none logo-responsive" src="{{ asset('build/images/logo.png') }}"/>
@@ -28,7 +29,32 @@
             <a class="nav-link text-white btn btn-secondary mx-4" href="">Particuliers</a>
             <a class="nav-link text-white btn btn-secondary mx-4" href="">Entreprises</a>
             <a class="nav-link text-white btn btn-secondary mx-4" href="">Les tarifs</a>
-            <a class="nav-link text-white btn btn-secondary mx-4" href="">Espaces</a>
+            <div class=" dropdown mx-4">
+                <a class="nav-link text-white btn btn-secondary dropdown-toggle" href="#" id="navbarDropdown"
+                   role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Espaces
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% if app.user %}
+                    <a class="dropdown-item " href="{{ path('app_logout') }}">Se déconnecter</a>
+                        {% if is_granted("ROLE_ADMIN") %}
+                            <a class="dropdown-item" href="{{ path("admin_home") }}">
+                                <img class="logo" src="{{ asset('build/images/admin.svg') }}"/>
+                                Admin
+                            </a>
+                        {% else %}
+                            <a class="dropdown-item" href="">
+                                <img class="logo" src="{{ asset('build/images/user.svg') }}"/>
+                                Membre
+                            </a>
+                        {% endif %}
+                    {% else %}
+                    <a class="dropdown-item " href="{{ path('app_login') }}">Se connecter</a>
+                    <a class="dropdown-item " href="">Créer un compte</a>
+                    {% endif %}
+                </div>
+            </div>
             <a href="" class="btn btn-light border-secondary p-2 d-lg-none ">Prendre Rendez-Vous</a>
         </div>
     </div>
