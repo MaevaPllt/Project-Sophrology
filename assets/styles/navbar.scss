@@ -23,6 +23,15 @@
   transition: all 200ms;
 }
 
+.meet:hover {
+  transform: scale(1.1);
+}
+
+.meet {
+  transition: all 200ms;
+}
+
+
 @media screen and (max-width: 1000px) {
   .navbar-primary {
     display: flex;
