@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('admin_home') }}
+{% endblock %}
+
+{% block body %}
+    <section class="bg-secondary my-5 py-5">
+        <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord</h1>
+        <div class="row justify-content-center mx-0 mx-2">
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/testimony.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Les témoignages</h3>
+                            <p class="card-text">Cette fonctionnalité vous permet de gérer de manière simple les témoignages de vos
+                                patients et de les inclure dans votre site pour que les visiteurs puissent les voir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light border-secondary mx-4" href="">Administrer</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/repport.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Les Comptes-Rendus</h3>
+                            <p class="card-text">Avec cette fonctionnalité, vous pouvez partager avec vos patients les
+                                comptes-rendus des séances, visibles sur votre espace et le leur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light border-secondary mx-4" href="">Administrer</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/event.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Le Blog d'actualités</h3>
+                            <p class="card-text">Présentez sur votre site vos événements
+                                et permettez à vos visiteurs de visualiser l'ensemble de vos évenements à venir ou déjà passés.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light border-secondary mx-4" href="">Administrer</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/price.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Les Tarifs</h3>
+                            <p class="card-text">Renseignez les visiteurs et vos patients des tarifs de vos séances, pour leur permettre
+                                de découvrir vos différents forfaits.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light border-secondary mx-4" href="">Administrer</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/company.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Les Séances Entreprises</h3>
+                            <p class="card-text">Montrez au entreprises les champs des possibilités de la sophrologie au travail.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light border-secondary mx-4" href="">Administrer</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/individual.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Les Séances Particuliers</h3>
+                            <p class="card-text">Faites découvrir aux particuliers tous les bienfaits que la
+                                sophrologie peut leur apporter.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light border-secondary mx-4" href="">Administrer</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/cible.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">La sophrologie</h3>
+                            <p class="card-text"> Vous pouvez mettre ici les catégories de personnes qui peuvent pratiquer
+                                la sophrologie.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light border-secondary mx-4" href="">Administrer</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+{% endblock %}
