@@ -30,6 +30,7 @@ Encore
     .addEntry('navbar', './assets/styles/navbar.scss')
     .addEntry('home', './assets/styles/home.scss')
     .addEntry('admin_home', './assets/styles/admin_home.scss')
+    .addEntry('login', './assets/styles/login.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
