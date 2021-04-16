@@ -6,11 +6,11 @@
         <div class="navbar-primary d-flex justify-content-center">
             <img class="logo my-3 mx-4" src="{{ asset('build/images/logo.png') }}"/>
             <div class="align-items-end my-4">
-                <h1 class="title text-center">Charlotte RICORDEAU</h1>
+                <h1 class="title text-center text-uppercase">Charlotte RICORDEAU</h1>
                 <h3 class="title text-center">Cabinet de Sophrologie - Orléans Métropole</h3>
                 <h3 class="title text-center"></h3>
                 <div class="d-flex justify-content-center meet">
-                <a href="" class="btn btn-light border-secondary p-2 ">Prendre Rendez-Vous</a>
+                <a href="" class="btn btn-light border-secondary p-2 font-weight-bold ">Prendre Rendez-Vous</a>
                 </div>
             </div>
         </div>
@@ -20,6 +20,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <img class="bg-light logo p-2 d-lg-none logo-responsive" src="{{ asset('build/images/logo.png') }}"/>
     <div class="collapse navbar-collapse lg-d-flex justify-content-center" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path("home") }}">Accueil</a>
@@ -28,6 +29,7 @@
             <a class="nav-link text-white btn btn-secondary mx-4" href="">Entreprises</a>
             <a class="nav-link text-white btn btn-secondary mx-4" href="">Les tarifs</a>
             <a class="nav-link text-white btn btn-secondary mx-4" href="">Espaces</a>
+            <a href="" class="btn btn-light border-secondary p-2 d-lg-none ">Prendre Rendez-Vous</a>
         </div>
     </div>
 </nav>
