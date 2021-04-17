@@ -5,3 +5,12 @@
 * {
   font-family: $font;
 }
+
+.up {
+  position: fixed;
+  bottom: $spacing-section;
+  right: $font-size-h2;
+  width: $font-size-h2;
+  height: $font-size-h2;
+  opacity: 0.3;
+}

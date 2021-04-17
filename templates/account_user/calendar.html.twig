@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('account') }}
+{% endblock %}
+
+{% block body %}
+    <section class="bg-secondary my-5 py-5">
+        <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord de
+            <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong>
+            <hr class="w-25 bg-info">
+        </h1>
+        <div class="row justify-content-center mx-0 mx-2">
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/calendar.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold mb-3">Prendre RDV en ligne </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-light border-secondary mx-4" href="{{ path('user_home') }}">Retour au Tableau de bord</a>
+    </section>
+    {% include '_includes/_arrow_up.html.twig' %}
+{% endblock %}

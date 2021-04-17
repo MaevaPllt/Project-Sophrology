@@ -10,7 +10,7 @@
                 <h3 class="title text-center">Cabinet de Sophrologie - Orléans Métropole</h3>
                 <h3 class="title text-center"></h3>
                 <div class="d-flex justify-content-center meet">
-                    <a href="" class="btn btn-light border-secondary p-2 font-weight-bold ">Prendre Rendez-Vous</a>
+                    <a href="" class="btn btn-light border-secondary p-2 font-weight-bold my-2">Prendre Rendez-Vous</a>
                 </div>
             </div>
         </div>
@@ -21,7 +21,9 @@
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <img class="bg-light logo p-2 d-lg-none logo-responsive" src="{{ asset('build/images/logo.png') }}"/>
+    <h5>
+        <a href="{{ path('home') }}" class="text-white my-2 d-lg-none">INSPIRE <strong class="text-info">& EXPIRE</strong></a>
+    </h5>
     <div class="collapse navbar-collapse lg-d-flex justify-content-center" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path("home") }}">Accueil</a>
