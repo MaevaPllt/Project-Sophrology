@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('account') }}
+{% endblock %}
+
+{% block body %}
+    <section class="bg-secondary my-5 py-5">
+        <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord de
+            <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong> </h1>
+        <div class="row justify-content-center mx-0 mx-2">
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/individual.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Mes informations personnelles</h3>
+                            <p class="card-text">Vous pouvez consulter vos informations personnelles (Nom, Prénom, Email)
+                            et les modifier si besoin.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light border-secondary mx-4" href="">Voir mes informations</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/pay.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Paiement en ligne sécurisé</h3>
+                            <p class="card-text">Avec cette fonctionnalité, vous pouvez payer en ligne vos séances de manière
+                            totalement sécurisée.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light border-secondary mx-4" href="">Voir plus</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/calendar.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Prendre RDV en ligne</h3>
+                            <p class="card-text"> Vous pouvez prendre RDV en ligne de manière simplifiée et en temps réel avec l'agenda de votre sophrologue.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light border-secondary mx-4" href="">Voir plus</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/repport.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Mes comptes-rendus</h3>
+                            <p class="card-text"> Vous pouvez consulter vos comptes-rendus laissés par votre sophrologue.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-light border-secondary mx-4" href="">Voir plus</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}
