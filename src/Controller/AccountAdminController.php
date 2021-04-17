@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * @package App\Controller
  * @Route("/admin", name="admin_")
  */
-class AdminHomeController extends AbstractController
+class AccountAdminController extends AbstractController
 {
 
     /**
@@ -22,6 +22,6 @@ class AdminHomeController extends AbstractController
     public function index(): Response
     {
 
-        return $this->render('account/account_admin.html.twig');
+        return $this->render('account_admin/admin_home.html.twig');
     }
 }
