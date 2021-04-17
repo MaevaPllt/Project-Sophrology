@@ -22,7 +22,7 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Entrez votre Prénom',
             ])
             ->add('lastname', TextType::class, [
-                'label' => 'Entrez votre adresse Nom',
+                'label' => 'Entrez votre Nom',
             ])
             ->add('email', TextType::class, [
                 'label' => 'Entrez votre adresse Email',

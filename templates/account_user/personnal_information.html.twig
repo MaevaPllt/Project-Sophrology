@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% form_theme formEditUser 'bootstrap_4_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('account') }}
+{% endblock %}
+
+{% block body %}
+    <section class="bg-secondary my-5 py-5">
+        <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord de
+            <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong> </h1>
+        <div class="row justify-content-center mx-0 mx-2">
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/information.svg') }}" alt="image"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold mb-3">Mes informations personnelles</h3>
+                            <div class="">Prénom : <strong>{{ app.user.firstname }}</strong></div>
+                            <div class="">Nom : <strong>{{ app.user.lastname }}</strong></div>
+                            <div class="">Adresse email : <strong>{{ app.user.email }}</strong></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    {{ form_start(formEditUser) }}
+
+                    <p class="m-0">{{ form_label(formEditUser.lastname) }}</p>
+                    <p>{{ form_widget(formEditUser.lastname) }}</p>
+
+                    <p class="m-0 mt-3">{{ form_label(formEditUser.firstname) }}</p>
+                    <p>{{ form_widget(formEditUser.firstname) }}</p>
+
+                    <p class="m-0 mt-3">{{ form_label(formEditUser.email) }}</p>
+                    <p>{{ form_widget(formEditUser.email) }}</p>
+                    <div class="d-flex justify-content-end">
+                    <button class="btn btn-light border-secondary"><p class="m-0">{{ 'Modifier' }}</p></button>
+                    </div>
+                    {{ form_end(formEditUser) }}
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-light border-secondary mx-4" href="{{ path('user_home') }}">Retour au Tableau de bord</a>
+    </section>
+{% endblock %}
