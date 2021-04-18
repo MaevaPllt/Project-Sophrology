@@ -4,6 +4,8 @@
     {{ encore_entry_link_tags('account') }}
 {% endblock %}
 
+{% block title %}Espace Membre| {{ parent() }}{% endblock %}
+
 {% block body %}
     <section class="bg-secondary my-5 py-5">
         <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord de
@@ -14,7 +16,7 @@
             <div class="col-lg-3 m-4 p-2 bg-primary border">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <img class="logo" src="{{ asset('build/images/information.svg') }}" alt="image"/>
+                        <img class="logo" src="{{ asset('build/images/information.svg') }}" alt="logo-outils"/>
                         <div class="mx-4">
                             <h3 class="card-text font-weight-bold">Mes informations personnelles</h3>
                             <p class="card-text">Vous pouvez consulter vos informations personnelles (Nom, Prénom, Email)
@@ -30,7 +32,7 @@
             <div class="col-lg-3 m-4 p-2 bg-primary border">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <img class="logo" src="{{ asset('build/images/pay.svg') }}" alt="image"/>
+                        <img class="logo" src="{{ asset('build/images/pay.svg') }}" alt="logo-argent-carte-bancaire"/>
                         <div class="mx-4">
                             <h3 class="card-text font-weight-bold">Paiement en ligne sécurisé</h3>
                             <p class="card-text">Avec cette fonctionnalité, vous pouvez payer en ligne vos séances de manière
@@ -46,7 +48,7 @@
             <div class="col-lg-3 m-4 p-2 bg-primary border">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <img class="logo" src="{{ asset('build/images/calendar.svg') }}" alt="image"/>
+                        <img class="logo" src="{{ asset('build/images/calendar.svg') }}" alt="logo-calendrier"/>
                         <div class="mx-4">
                             <h3 class="card-text font-weight-bold">Prendre RDV en ligne</h3>
                             <p class="card-text"> Vous pouvez prendre RDV en ligne de manière simplifiée et en temps réel avec l'agenda de votre sophrologue.
@@ -62,7 +64,7 @@
             <div class="col-lg-3 m-4 p-2 bg-primary border">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <img class="logo" src="{{ asset('build/images/repport.svg') }}" alt="image"/>
+                        <img class="logo" src="{{ asset('build/images/repport.svg') }}" alt="logo-rapport-message"/>
                         <div class="mx-4">
                             <h3 class="card-text font-weight-bold">Mes comptes-rendus</h3>
                             <p class="card-text"> Vous pouvez consulter vos comptes-rendus laissés par votre sophrologue.

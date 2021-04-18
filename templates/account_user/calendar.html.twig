@@ -4,6 +4,8 @@
     {{ encore_entry_link_tags('account') }}
 {% endblock %}
 
+{% block title %}Espace Membre| {{ parent() }}{% endblock %}
+
 {% block body %}
     <section class="bg-secondary my-5 py-5">
         <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord de
@@ -14,7 +16,7 @@
             <div class="col-lg-3 m-4 p-2 bg-primary border">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <img class="logo" src="{{ asset('build/images/calendar.svg') }}" alt="image"/>
+                        <img class="logo" src="{{ asset('build/images/calendar.svg') }}" alt="logo-calendrier"/>
                         <div class="mx-4">
                             <h3 class="card-text font-weight-bold mb-3">Prendre RDV en ligne </h3>
                         </div>
