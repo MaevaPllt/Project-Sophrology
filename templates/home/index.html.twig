@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('home') }}
@@ -102,7 +103,7 @@
         </div>
     </section>
 
-    <section class="my-5 py-5">
+    <section class="my-5 py-3">
         <h1 class="text-center mb-4 text-secondary text-uppercase">Les nouvelles actualités
             <hr class="w-25 bg-info">
         </h1>
@@ -135,7 +136,7 @@
         </div>
     </section>
 
-    <section class="my-5 py-2 container">
+    <section class="my-5 py-3 container">
         <h1 class="text-center mb-4 text-secondary text-uppercase">Ils m'ont fait confiance
             <hr class="w-25 bg-info">
         </h1>
@@ -152,7 +153,8 @@
                              alt="image guillemets"/>
 
                         <p>{{ testiness.content|raw }}</p>
-                        <p class="font-weight-bold">{{ testiness.name }}, {{ testiness.age }}, Le {{ testiness.date|date('d/m/Y') }}
+                        <p class="font-weight-bold">{{ testiness.name }}, {{ testiness.age }},
+                            Le {{ testiness.date|date('d/m/Y') }}
                         <p>
                         <div class="d-flex justify-content-end">
                             <img class="quotes" src="{{ asset('build/images/right-quotes.png') }}"
@@ -162,6 +164,31 @@
                 {% endfor %}
             </div>
         </div>
+    </section>
+    <section class="container bg-primary my-5 py-3 border">
+        <h1 class="text-center mb-4 text-secondary text-uppercase">Restons en contact
+            <hr class="w-25 bg-info">
+        </h1>
+
+        {{ form_start(form) }}
+        <div class="row my-2">
+            <div class="col-lg-6 d-flex flex-column font-weight-bold">
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name) }}
+            </div>
+            <div class="col-lg-6 d-flex flex-column font-weight-bold">
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}
+            </div>
+        </div>
+        <div class="font-weight-bold">
+            {{ form_label(form.message) }}
+            {{ form_widget(form.message) }}
+        </div>
+        <div class=" d-flex justify-content-end mt-3">
+            <input class="btn btn-light border-info " type='submit' value='Envoyer'>
+        </div>
+        {{ form_end(form) }}
     </section>
     {% include '_includes/_arrow_up.html.twig' %}
 {% endblock %}
