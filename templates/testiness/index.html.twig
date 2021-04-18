@@ -12,7 +12,7 @@
             <hr class="w-25 bg-info">
         </h1>
         <div class="container bg-primary border mb-4">
-            <h2 class="my-3 ">Les témoignages - Index</h2>
+            <h2 class="my-3 ">Les témoignages - <strong>Index</strong></h2>
             <a class="btn btn-light mb-2" href="{{ path('testiness_new') }}">
                 <img width="20em" height="20em" src="{{ asset('build/images/plus.svg') }}" alt="logo-plus-ajouter"/>
                 Créer un nouveau témoignage</a>
@@ -36,10 +36,10 @@
                         <td>{{ testiness.date ? testiness.date|date('d-m-Y') : '' }}</td>
                         <td>{{ testiness.content|raw }}</td>
                         <td>
-                            <a class="btn btn-sm ml-3"
+                            <a class="btn btn-outline-success ml-2"
                                href="{{ path('testiness_edit', {'id': testiness.id}) }}">
                                 <img width="25em" height="30em"
-                                     src="{{ asset('build/images/edit.svg') }}" alt="logo-crayon-modifier" title="Modifier"/>
+                                     src="{{ asset('build/images/pencil.svg') }}" alt="logo-crayon-modifier" title="Modifier"/>
                                 <span>{{ include('testiness/_delete_form.html.twig') }}</span>
                             </a>
                         </td>
@@ -53,7 +53,7 @@
             </table>
             <div class="my-2">
                 <a class="btn btn-light border-secondary" href="{{ path("admin_home") }}">
-                    Retour à l'accueil Administration
+                    Retour au tableau de bord
                 </a>
                 <a class="btn btn-light border-secondary" href="{{ path("home") }}">
                     Voir les modifications
@@ -61,4 +61,5 @@
             </div>
         </div>
     </section>
+    {% include '_includes/_arrow_up.html.twig' %}
 {% endblock %}
