@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('account') }}
+{% endblock %}
+
+{% block title %}Espace Administrateur| {{ parent() }}{% endblock %}
+
+
+{% block body %}
+    <section class="bg-secondary my-5 p-5 ">
+        <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord de
+            <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong>
+            <hr class="w-25 bg-info">
+        </h1>
+        <div class="container bg-primary border mb-4">
+            <h2 class="my-3">Modifications du tarif <strong>{{ price.name }}</strong></h2>
+
+            {{ include('admin_theme/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+            <a class="btn btn-light border-secondary my-2" href="{{ path('admin_theme_index') }}">Retour à l'index</a>
+        </div>
+    </section>
+    {% include '_includes/_arrow_up.html.twig' %}
+{% endblock %}
+

@@ -12,18 +12,24 @@
         </h1>
         <div class="row justify-content-center mx-0 mx-2">
             {% for price in prices %}
-            <div class="col-lg-3 m-4 p-2 bg-primary border">
-                <h2 class="text-center my-2">{{ price.name }}</h2>
-                <hr class="w-25 bg-info">
-                <h3 class="text-center my-3 font-weight-bold">{{ price.price }}</h3>
-                <div class="card-body">
+            <div class="col-lg-3 m-4 p-4 bg-primary border">
+                <div class="mb-3">
+                    <h2 class="text-center">{{ price.name }}</h2>
+                    <hr class="w-25 bg-info">
+                </div>
+                <div class="my-3">
+                    <h3 class="card-text text-center font-weight-bold">{{ price.price }}</h3>
                     <p class="card-text text-center font-weight-bold ">{{ price.information }}</p>
+                </div>
                     <p class="card-text text-center">{{ price.description|raw }}</p>
                     <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path('home') }}">Prendre RDV</a>
-                </div>
             </div>
             {% endfor %}
         </div>
+        <p class="text-center">
+            * La sécurité sociale ne prend pas en charge les séances de sophrologie, toutefois certaines mutuelles proposent un remboursement. <br />
+            Conditions d'annulation d'une séance : Si vous annulez votre rendez-vous moins de 48h à l'avance, la séance sera considérée comme effectuée et vous sera facturée.
+        </p>
     </section>
     <section class="container my-5 py-3">
         <h1 class="text-center mb-4 text-secondary text-uppercase">Vous êtes une entreprise
@@ -47,4 +53,5 @@
             <a href="" class="btn btn-light border-info p-2 font-weight-bold text-secondary my-2">Réaliser un devis</a>
         </div>
     </section>
+    {% include '_includes/_arrow_up.html.twig' %}
 {% endblock %}

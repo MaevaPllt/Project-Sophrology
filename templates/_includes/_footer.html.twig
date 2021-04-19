@@ -2,14 +2,15 @@
     {{ encore_entry_link_tags('navbar') }}
 {% endblock %}
 
-<div class="justify-content-center row mx-0 py-5 bg-secondary">
+<div class="justify-content-center row mx-0 pt-4 bg-secondary">
     <div class="col-lg-2 col-md-3 font-weight-bold navbar-nav">
         <div class="nav-link  text-center text-uppercase text-white font-weight-bold">Plan du site</div>
-        <a class="nav-link text-white btn btn-secondary mx-4" href="">Accueil</a>
-        <a class="nav-link text-white btn btn-secondary mx-4" href="">La sophrologie</a>
+        <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path('home') }}">Accueil</a>
+        <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path('sophrology') }}">La sophrologie</a>
         <a class="nav-link text-white btn btn-secondary mx-4" href="">Particuliers</a>
         <a class="nav-link text-white btn btn-secondary mx-4" href="">Entreprises</a>
-        <a class="nav-link text-white btn btn-secondary mx-4" href="">Les tarifs</a>
+        <a class="nav-link text-white btn btn-secondary mx-4" href="">Le blog</a>
+        <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path('price') }}">Les tarifs</a>
     </div>
     <div class="col-lg-2 col-md-3">
         <div class="nav-link  text-center text-uppercase text-white font-weight-bold">Les horaires</div>
@@ -33,9 +34,16 @@
     </div>
     <div class="col-lg-3 col-md-3">
         <div class="nav-link  text-center text-uppercase text-white font-weight-bold">Me situer</div>
-        <iframe width="100%" height="200"
+        <iframe width="100%" height="250"
                 frameborder="100" scrolling="no" marginheight="0" marginwidth="0"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=1.95020%2C47.88027%2C1.95422%2C47.87873&amp;layer=mapnik&amp;marker=47.87967%2C1.95240"></iframe>
         <a href="https://www.openstreetmap.org/?mlat=47.87967&amp;mlon=1.95240#map=19/47.87976/1.95282"></a>
+    </div>
+
+    <div class="text-center font-weight-bold text-white mt-3 pb-2">
+    Mentions Légales - copyright ©
+        <a class="text-decoration-none" href="https://inspire-expire.com/" target="_blank">
+            Inspire-expire.com
+        </a>
     </div>
 </div>

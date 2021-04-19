@@ -1,0 +1,11 @@
+<a class="btn btn-sm">
+    <form method="post" action="{{ path('admin_theme_delete', {'id': theme.id}) }}"
+          onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ces modifications ?');">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ theme.id) }}">
+        <button class="btn btn-outline-danger">
+            <img width="25em" height="30em"
+                 src="{{ asset('build/images/corbeille.svg') }}" alt="logo-poubelle-corbeille" title="Supprimer"/>
+        </button>
+    </form>
+</a>
