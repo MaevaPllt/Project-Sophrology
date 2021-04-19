@@ -38,6 +38,7 @@ Encore
     .addEntry('account', './assets/styles/account.scss')
     .addEntry('login', './assets/styles/login.scss')
     .addEntry('register', './assets/styles/register.scss')
+    .addEntry('sophrology', './assets/styles/sophrology.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

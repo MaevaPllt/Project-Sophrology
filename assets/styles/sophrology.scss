@@ -1,0 +1,62 @@
+@import 'app.scss';
+
+.background-sophrology {
+  filter: brightness(70%);
+}
+
+.border {
+  border-radius: $border;
+}
+
+.container-sophro {
+  position: relative;
+}
+
+.image-sophro {
+  filter: brightness(70%);
+}
+
+.title-card-sophro {
+    opacity: 1;
+}
+
+.overlay-sophro {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.container-sophro:hover .overlay-sophro {
+  opacity: 1;
+}
+
+.container-sophro:hover .title-card-sophro {
+  opacity: 0;
+}
+
+
+.text-sophro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1000px) {
+
+  .container-sophro:hover .title-card-sophro {
+    opacity: 1;
+  }
+  .container-sophro:hover .overlay-sophro {
+    opacity: 0;
+  }
+}
+
