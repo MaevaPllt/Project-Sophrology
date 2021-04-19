@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+
+{% block body %}
+    <section class="my-5 py-3">
+        <h1 class="text-center mb-4 text-secondary text-uppercase">Les tarifs
+            <hr class="w-25 bg-info">
+        </h1>
+        <div class="row justify-content-center mx-0 mx-2">
+            {% for price in prices %}
+            <div class="col-lg-3 m-4 p-2 bg-primary border">
+                <h2 class="text-center my-2">{{ price.name }}</h2>
+                <hr class="w-25 bg-info">
+                <h3 class="text-center my-3 font-weight-bold">{{ price.price }}</h3>
+                <div class="card-body">
+                    <p class="card-text text-center font-weight-bold ">{{ price.information }}</p>
+                    <p class="card-text text-center">{{ price.description|raw }}</p>
+                    <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path('home') }}">Prendre RDV</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="container my-5 py-3">
+        <h1 class="text-center mb-4 text-secondary text-uppercase">Vous êtes une entreprise
+            <hr class="w-25 bg-info">
+        </h1>
+        <p>
+            La <strong class="text-secondary">sophrologie</strong> se révèle être un formidable outil de gestion des <strong class="text-secondary">Ressources Humaines en entreprise.</strong>
+            La sophrologie est un très bon moyen de prévention des <strong class="text-secondary">risques psychosociaux</strong>, des <strong class="text-secondary">troubles
+                musculo-squelettiques</strong> et elle permet aussi d'atteindre une meilleure qualité de vie au travail.
+            La sophrologie permet à chacun de découvrir ses propres seuils de tolérance et propose différents outils
+            pour éviter le point de basculement. La sophrologie permet de répondre, à la fois, aux besoins de l'entreprise
+            et de ses collaborateurs par l'apport de techniques de <strong class="text-secondary">développements personnels</strong>.
+        </p>
+        <p>
+            Je propose des séances de <strong class="text-secondary">groupe</strong> selon un thème ou un objectif défini au préalable selon le besoin. Vous êtes
+            <strong class="text-secondary">gérant(e) d'entreprise, directeur(trice) des Ressources Humaines ou du CHSCT, responsable d'un CE ou encore
+            Chief Happiness Officer</strong> vous souhaitez faire rentrer la sophrologie dans votre entreprise, je vous propose
+            alors de nous rencontrer afin d'étudier ensemble votre projet.
+        </p>
+        <div class="d-flex justify-content-end">
+            <a href="" class="btn btn-light border-info p-2 font-weight-bold text-secondary my-2">Réaliser un devis</a>
+        </div>
+    </section>
+{% endblock %}
