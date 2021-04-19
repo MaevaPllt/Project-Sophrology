@@ -10,7 +10,7 @@
                 <h3 class="title text-center">Cabinet de Sophrologie - Orléans Métropole</h3>
                 <h3 class="title text-center"></h3>
                 <div class="d-flex justify-content-center meet">
-                    <a href="" class="btn btn-light border-secondary p-2 font-weight-bold my-2">Prendre Rendez-Vous</a>
+                    <a href="" class="btn btn-light border-info p-2 my-2">Prendre Rendez-Vous</a>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path("sophrology") }}">Sophrologie</a>
             <a class="nav-link text-white btn btn-secondary mx-4" href="">Particuliers</a>
             <a class="nav-link text-white btn btn-secondary mx-4" href="">Entreprises</a>
-            <a class="nav-link text-white btn btn-secondary mx-4" href="">Les tarifs</a>
+            <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path('price') }}">Les tarifs</a>
             <div class=" dropdown mx-4">
                 <a class="nav-link text-white btn btn-secondary dropdown-toggle" href="#" id="navbarDropdown"
                    role="button" data-toggle="dropdown"
@@ -54,7 +54,7 @@
                             </a>
                         {% endif %}
                     {% else %}
-                    <a class="dropdown-item " href="{{ path('app_login') }}">
+                    <a class="dropdown-item" href="{{ path('app_login') }}">
                         <img class="logo-navbar" src="{{ asset('build/images/connect.svg') }}" alt="logo-user-connexion-compte"/>
                         Se connecter</a>
                     <a class="dropdown-item" href="{{ path('app_register') }}">
