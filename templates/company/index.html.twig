@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entreprises | {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('sophrology') }}
+{% endblock %}
+
+{% block body %}
+    <h1 class="text-center my-5 pt-3 text-secondary text-uppercase">Les Entreprises
+        <hr class="w-25 bg-info">
+    </h1>
+    <section class="row bg-primary justify-content-around mx-0 my-5 py-5">
+        <div class="col-lg-5 col-md-5 my-2">
+            <img class="shadow p-1 lack w-100 border background-sophrology"
+                 src="{{ asset('build/images/company3.jpg') }}" alt="image-ordinateur-entreprise-travail"/>
+        </div>
+        <div class="col-lg-6 col-md-5">
+            <h2 class="text-center text-secondary my-3">La Sophrologie dans l'entreprise
+                <hr class="w-50 bg-info">
+            </h2>
+            <p class="mb-5">
+                La sophrologie se révèle être un formidable <strong class="text-secondary">outil de gestion des
+                    Ressources Humaines</strong> en entreprise. En
+                effet,
+                la sophrologie est un très bon moyen de prévention des <strong class="text-secondary">risques
+                    psychosociaux, des troubles
+                    musculo-squelettiques</strong>
+                et elle permet aussi d'atteindre une meilleure qualité de vie au travail.
+                La sophrologie permet à chacun de découvrir ses propres seuils de tolérance et propose différents outils
+                pour
+                éviter le point de basculement. La sophrologie permet de répondre, à la fois, aux besoins de
+                l'entreprise et de
+                ses collaborateurs par l'apport de <strong class="text-secondary">techniques de développements
+                    personnels</strong>.
+            </p>
+            <h2 class="text-center text-secondary my-4">Vers une meilleure qualité de travail
+                <hr class="w-50 bg-info">
+            </h2>
+            <div class="text-center font-weight-bold text-secondary">
+                <p>Prendre confiance en soi</p>
+                <p>Accroître sa motivation</p>
+                <p>S’adapter à toutes les situations</p>
+                <p>Garder sa concentration et accroître sa capacité de mémorisation</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-5 py-3">
+        <h2 class="title text-center mb-4 text-secondary text-uppercase">Des axes de travail adaptés
+            <hr class="w-25 bg-info">
+        </h2>
+        <div class="row justify-content-center mx-0 mx-2">
+            {% for company in companies %}
+                <div class="col-lg-3 m-4 bg-primary p-2 container-sophro border">
+                    <img class="w-100 h-100 image-sophro" src="{{ vich_uploader_asset(company, 'posterFile') }}"
+                         alt="{{ company.name }}"/>
+                    <h2 class="text-uppercase font-weight-bold text-white text-center text-sophro title-card-sophro ">{{ company.name }}</h2>
+                    <div class="overlay-sophro">
+                        <div class="text-sophro text-white text-center font-weight-bold d-none d-md-block">{{ company.description|raw }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

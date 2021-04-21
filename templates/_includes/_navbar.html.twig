@@ -29,7 +29,7 @@
             <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path("home") }}">Accueil</a>
             <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path("sophrology") }}">Sophrologie</a>
             <a class="nav-link text-white btn btn-secondary mx-4" href="">Particuliers</a>
-            <a class="nav-link text-white btn btn-secondary mx-4" href="">Entreprises</a>
+            <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path('company') }}">Entreprises</a>
             <a class="nav-link text-white btn btn-secondary mx-4" href="">Le blog</a>
             <a class="nav-link text-white btn btn-secondary mx-4" href="{{ path('price') }}">Les tarifs</a>
             <div class=" dropdown mx-4">
@@ -38,30 +38,29 @@
                    aria-haspopup="true" aria-expanded="false">
                     Espaces
                 </a>
-                <div class="dropdown-menu p-2" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {% if app.user %}
-                    <a class="dropdown-item " href="{{ path('app_logout') }}">
+                    <a class="dropdown-item pl-2 mb-1" href="{{ path('app_logout') }}">
                         <img class="logo-navbar" src="{{ asset('build/images/deconnect.svg') }}" alt="logo-user-deconnexion-compte"/>
                         Se déconnecter
                     </a>
-                        <hr class="w-50 bg-info">
+
                         {% if is_granted("ROLE_ADMIN") %}
-                            <a class="dropdown-item" href="{{ path("admin_home") }}">
+                            <a class="dropdown-item pl-2 bg-info" href="{{ path("admin_home") }}">
                                 <img class="logo-navbar" src="{{ asset('build/images/admin.svg') }}" alt="logo-ordinateur-admin"/>
                                 Compte Admin
                             </a>
                         {% else %}
-                            <a class="dropdown-item" href="{{ path('user_home') }}">
+                            <a class="dropdown-item pl-2 bg-info" href="{{ path('user_home') }}">
                                 <img class="logo-navbar" src="{{ asset('build/images/user.svg') }}" alt="logo-user-membre-compte"/>
                                 Compte Membre
                             </a>
                         {% endif %}
                     {% else %}
-                    <a class="dropdown-item" href="{{ path('app_login') }}">
+                    <a class="dropdown-item pl-2" href="{{ path('app_login') }}">
                         <img class="logo-navbar" src="{{ asset('build/images/connect.svg') }}" alt="logo-user-connexion-compte"/>
                         Se connecter</a>
-                        <hr class="w-50 bg-info">
-                    <a class="dropdown-item" href="{{ path('app_register') }}">
+                    <a class="dropdown-item pl-2" href="{{ path('app_register') }}">
                         <img class="logo-navbar" src="{{ asset('build/images/account.svg') }}" alt="logo-nouveau-user-compte"/>
                         Créer un compte</a>
                     {% endif %}

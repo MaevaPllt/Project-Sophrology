@@ -2,44 +2,26 @@
 
 namespace App\Entity;
 
-use App\Repository\ThemeRepository;
-use DateTimeInterface;
+use App\Repository\CompanyRepository;
 use DateTime;
+use DateTimeInterface;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
-use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ORM\Entity(repositoryClass=ThemeRepository::class)
+ * @ORM\Entity(repositoryClass=CompanyRepository::class)
  * @Vich\Uploadable
  */
-class Theme
+class Company
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private ?string $poster ='';
-
-    /**
-     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
-     * @var File|null
-     * @Assert\File(maxSize="4000k", mimeTypes={"image/jpeg", "image/png"})
-     */
-
-    private ?File $posterFile = null;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private ?DateTimeInterface $updatedAt;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -51,21 +33,27 @@ class Theme
      */
     private ?string $description;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private ?string $poster = '';
+
+    /**
+     * @Vich\UploadableField(mapping="poster_file_company", fileNameProperty="poster")
+     * @var File|null
+     * @Assert\File(maxSize="4000k", mimeTypes={"image/jpeg", "image/png"})
+     */
+
+    private ?File $posterFile = null;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private ?DateTimeInterface $updatedAt;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getPoster(): ?string
-    {
-        return $this->poster;
-    }
-
-    public function setPoster(?string $poster): self
-    {
-        $this->poster = $poster;
-
-        return $this;
     }
 
     public function getName(): ?string
@@ -92,7 +80,20 @@ class Theme
         return $this;
     }
 
-    public function setPosterFile(?File $image = null): Theme
+    public function getPoster(): ?string
+    {
+        return $this->poster;
+    }
+
+    public function setPoster(?string $poster): self
+    {
+        $this->poster = $poster;
+
+        return $this;
+    }
+
+
+    public function setPosterFile(?File $image = null): Company
     {
         $this->posterFile = $image;
         if ($image) {
