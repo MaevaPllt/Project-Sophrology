@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('account') }}
+{% endblock %}
+
+{% block title %}Espace Administrateur| {{ parent() }}{% endblock %}
+
+{% block body %}
+    <section class="bg-secondary my-5 p-5 ">
+        <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord de
+            <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong>
+            <hr class="w-25 bg-info">
+        </h1>
+        <div class="container bg-primary border mb-4">
+            <h2 class="my-3 ">Les Axes de travail- <strong>Index</strong></h2>
+            <a class="btn btn-light mb-2" href="{{ path('admin_company_new') }}">
+                <img width="20em" height="20em" src="{{ asset('build/images/plus.svg') }}" alt="logo-plus-ajouter"/>
+                Créer un nouvel Axe de travail</a>
+            <table class="table">
+                <thead class="">
+                <tr class="">
+                    <th>Numéro</th>
+                    <th>Nom</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>État</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for company in companies %}
+                    <tr class="">
+                        <td class="font-weight-bold">{{ company.id }}</td>
+                        <td>{{ company.name }}</td>
+                        <td><img class="img-thumbnail little" src="{{ vich_uploader_asset(company, 'posterFile') }}" alt="{{ company.name }}"></td>
+                        <td>{{ company.description|raw }}</td>
+                        <td>
+                            <a class="btn btn-outline-success ml-2"
+                               href="{{ path('admin_company_edit', {'id': company.id}) }}">
+                                <img width="25em" height="30em"
+                                     src="{{ asset('build/images/pencil.svg') }}" alt="logo-crayon-modifier" title="Modifier"/>
+                                <span>{{ include('admin_company/_delete_form.html.twig') }}</span>
+                            </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">Vous n'avez pas d'Axe de travail d'enregistré pour le moment</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="my-2">
+                <a class="btn btn-light border-secondary" href="{{ path("admin_home") }}">
+                    Retour au tableau de bord
+                </a>
+                <a class="btn btn-light border-secondary" href="{{ path("company") }}">
+                    Voir les modifications
+                </a>
+            </div>
+        </div>
+    </section>
+    {% include '_includes/_arrow_up.html.twig' %}
+{% endblock %}
