@@ -12,39 +12,39 @@
             <hr class="w-25 bg-info">
         </h1>
         <div class="container bg-primary border mb-4">
-            <h2 class="my-3 ">Les thèmes d'accompagnement- <strong>Index</strong></h2>
-            <a class="btn btn-light mb-2" href="{{ path('admin_theme_new') }}">
+            <h2 class="my-3 ">Les Catégories de Particuliers- <strong>Index</strong></h2>
+            <a class="btn btn-light mb-2" href="{{ path('admin_individual_new') }}">
                 <img width="20em" height="20em" src="{{ asset('build/images/plus.svg') }}" alt="logo-plus-ajouter"/>
-                Créer un nouveau thème</a>
+                Créer une nouvelle Catégorie</a>
             <table class="table">
                 <thead class="">
                 <tr class="">
                     <th>Numéro</th>
-                    <th>Thème de l'accompagnement</th>
+                    <th>Catégorie de particuliers</th>
                     <th>Image</th>
                     <th>Contenu</th>
                     <th>État</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for theme in themes %}
+                {% for individual in individuals %}
                     <tr class="">
-                        <td class="font-weight-bold">{{ theme.id }}</td>
-                        <td>{{ theme.name }}</td>
-                        <td><img class="img-thumbnail little" src="{{ vich_uploader_asset(theme, 'posterFile') }}" alt="{{ theme.name }}"></td>
-                        <td>{{ theme.description|raw }}</td>
+                        <td class="font-weight-bold">{{ individual.id }}</td>
+                        <td>{{ individual.name }}</td>
+                        <td><img class="img-thumbnail little" src="{{ vich_uploader_asset(individual, 'posterFile') }}" alt="{{ individual.name }}"></td>
+                        <td>{{ individual.description|raw }}</td>
                         <td>
                             <a class="btn btn-outline-success ml-2"
-                               href="{{ path('admin_theme_edit', {'id': theme.id}) }}">
+                               href="{{ path('admin_individual_edit', {'id': individual.id}) }}">
                                 <img width="25em" height="30em"
                                      src="{{ asset('build/images/pencil.svg') }}" alt="logo-crayon-modifier" title="Modifier"/>
-                                <span>{{ include('admin_theme/_delete_form.html.twig') }}</span>
+                                <span>{{ include('admin_individual/_delete_form.html.twig') }}</span>
                             </a>
                         </td>
                     </tr>
                 {% else %}
                     <tr>
-                        <td colspan="6">Vous n'avez pas de thèmes d'enregistré pour le moment</td>
+                        <td colspan="6">Vous n'avez pas de catégorie de particuliers d'enregistrée pour le moment</td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -53,7 +53,7 @@
                 <a class="btn btn-light border-secondary" href="{{ path("admin_home") }}">
                     Retour au tableau de bord
                 </a>
-                <a class="btn btn-light border-secondary" href="{{ path("sophrology") }}">
+                <a class="btn btn-light border-secondary" href="{{ path("individual") }}">
                     Voir les modifications
                 </a>
             </div>

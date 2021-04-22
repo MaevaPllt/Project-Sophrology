@@ -27,6 +27,8 @@ final class Version20210416152817 extends AbstractMigration
         $this->addSql('ALTER TABLE price CHANGE price price VARCHAR(255) NOT NULL');
         $this->addSql('CREATE TABLE theme (id INT AUTO_INCREMENT NOT NULL, poster LONGTEXT NOT NULL, uploaded_at DATETIME DEFAULT NULL, name VARCHAR(255) NOT NULL, description LONGTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE theme CHANGE uploaded_at updated_at DATETIME DEFAULT NULL');
+        $this->addSql('CREATE TABLE company (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, description LONGTEXT NOT NULL, poster LONGTEXT NOT NULL, updated_at DATETIME DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE individual (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, description LONGTEXT NOT NULL, poster LONGTEXT NOT NULL, updated_at DATETIME DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
     }
 
     public function down(Schema $schema) : void
@@ -39,5 +41,7 @@ final class Version20210416152817 extends AbstractMigration
         $this->addSql('ALTER TABLE price CHANGE price price INT NOT NULL');
         $this->addSql('DROP TABLE theme');
         $this->addSql('ALTER TABLE theme CHANGE updated_at uploaded_at DATETIME DEFAULT NULL');
+        $this->addSql('DROP TABLE company');
+        $this->addSql('DROP TABLE individual');
     }
 }
