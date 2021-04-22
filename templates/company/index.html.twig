@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Entreprises | {{ parent() }}{% endblock %}
 
@@ -11,15 +11,15 @@
         <hr class="w-25 bg-info">
     </h1>
     <section class="row bg-primary justify-content-around mx-0 my-5 py-5">
-        <div class="col-lg-5 col-md-5 my-2">
+        <div class="col-lg-5 col-md-5">
             <img class="shadow p-1 lack w-100 border background-sophrology"
-                 src="{{ asset('build/images/company3.jpg') }}" alt="image-ordinateur-entreprise-travail"/>
+                 src="{{ asset('build/images/company.jpg') }}" alt="image-ordinateur-entreprise-travail"/>
         </div>
         <div class="col-lg-6 col-md-5">
             <h2 class="text-center text-secondary my-3">La Sophrologie dans l'entreprise
                 <hr class="w-50 bg-info">
             </h2>
-            <p class="mb-5">
+            <p class="mt-4 mb-5">
                 La sophrologie se révèle être un formidable <strong class="text-secondary">outil de gestion des
                     Ressources Humaines</strong> en entreprise. En
                 effet,
@@ -37,11 +37,17 @@
             <h2 class="text-center text-secondary my-4">Vers une meilleure qualité de travail
                 <hr class="w-50 bg-info">
             </h2>
-            <div class="text-center font-weight-bold text-secondary">
-                <p>Prendre confiance en soi</p>
-                <p>Accroître sa motivation</p>
-                <p>S’adapter à toutes les situations</p>
-                <p>Garder sa concentration et accroître sa capacité de mémorisation</p>
+            <div class="mt-4">
+                Sur le plan professionnel, la sophrologie permet de  <strong class="text-secondary">mieux vivre les situations de stress</strong>, comme la
+                surcharge de travail, la peur des changements organisationnels. Pour les managers, c’est un  <strong class="text-secondary">outil
+                    d’amélioration du travail collectif et de cohésion d’équipe</strong>. <br />
+
+                La sophrologie apprend à être plus concentré(e) à ce que l’on fait, à vivre dans le moment présent,
+                et à ne pas toujours être dans une course contre la montre.  <strong class="text-secondary">Une pause réparatrice</strong> permet d’être plus
+                performant(e) mais il faut d’abord accepter de prendre un véritable temps pour vous-même. <br />
+
+                La sophrologie peut vous être utile en prévention d’un burn-out, pour  <strong class="text-secondary">vous préparer à un entretien ou
+                    pour améliorer vos chances de réussir un challenge professionnel</strong>. <br />
             </div>
         </div>
     </section>
@@ -63,4 +69,5 @@
             {% endfor %}
         </div>
     </section>
+    {% include '_includes/_arrow_up.html.twig' %}
 {% endblock %}

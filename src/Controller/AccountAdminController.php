@@ -21,6 +21,8 @@ class AccountAdminController extends AbstractController
      */
     public function index(): Response
     {
+        $this->addFlash('success', 'Bonjour ' . $this->getUser()->getFirstname() .
+            ' ! Le tableau de bord INSPIRE & EXPIRE vous permet de personnaliser votre site, lançez-vous !' ?? '');
 
         return $this->render('account_admin/admin_home.html.twig');
     }

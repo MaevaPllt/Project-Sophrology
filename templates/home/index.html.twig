@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block stylesheets %}
@@ -7,6 +7,9 @@
 
 
 {% block body %}
+    <h1 class="text-center my-5 pt-3 text-secondary text-uppercase">INSPIRE <span class="text-info">& EXPIRE</span>
+        <hr class="w-25 bg-info">
+    </h1>
     <section class="row bg-primary justify-content-around mx-0 my-5 py-5">
         <div class="col-lg-5 col-md-5 my-2">
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -85,7 +88,8 @@
                    href="https://www.sophrologue-formation.com/copie-de-sophrologie-et-equilibre-p" role="button">
                     <p class="">Spécialisée en Équilibre pondéral et Comportement Adapté (EPCA)</p>
                 </a>
-                <a class="btn btn-light border-info text-secondary font-weight-bold m-2 col-lg-5" href="https://www.ednh.fr/"
+                <a class="btn btn-light border-info text-secondary font-weight-bold m-2 col-lg-5"
+                   href="https://www.ednh.fr/"
                    role="button">
                     <p class="">BTS Diététique à Paris</p>
                 </a>
@@ -95,7 +99,8 @@
                     <p class="">Certifiée au Répertoire Nationale de Certification Professionnelle
                         (RNCP)</p>
                 </a>
-                <a class="btn btn-light border-info text-secondary font-weight-bold m-2 col-lg-5" href="https://www.essasophro.com/"
+                <a class="btn btn-light border-info text-secondary font-weight-bold m-2 col-lg-5"
+                   href="https://www.essasophro.com/"
                    role="button">
                     <p class="">Diplômée de l’Ecole Supérieure de Sophrologie Appliquée (ESSA)</p>
                 </a>
@@ -165,30 +170,31 @@
             </div>
         </div>
     </section>
-    <section class="container background-contact border-light my-5 py-3 border">
+    <section class="container my-5 pt-5 ">
         <h2 class=" title text-center mb-4 text-secondary text-uppercase">Restons en contact
             <hr class="w-25 bg-info">
         </h2>
-
-        {{ form_start(form) }}
-        <div class="row my-2">
-            <div class="col-lg-6 d-flex flex-column font-weight-bold">
-                {{ form_label(form.name) }}
-                {{ form_widget(form.name) }}
+        <div class="bg-primary background-contact border-light border p-5">
+            {{ form_start(form) }}
+            <div class="row my-2">
+                <div class="col-lg-6 d-flex flex-column font-weight-bold">
+                    {{ form_label(form.name) }}
+                    {{ form_widget(form.name) }}
+                </div>
+                <div class="col-lg-6 d-flex flex-column font-weight-bold">
+                    {{ form_label(form.email) }}
+                    {{ form_widget(form.email) }}
+                </div>
             </div>
-            <div class="col-lg-6 d-flex flex-column font-weight-bold">
-                {{ form_label(form.email) }}
-                {{ form_widget(form.email) }}
+            <div class="font-weight-bold">
+                {{ form_label(form.message) }}
+                {{ form_widget(form.message) }}
             </div>
+            <div class=" d-flex justify-content-end mt-3">
+                <input class="btn btn-light border-info font-weight-bold text-secondary " type='submit' value='Envoyer'>
+            </div>
+            {{ form_end(form) }}
         </div>
-        <div class="font-weight-bold">
-            {{ form_label(form.message) }}
-            {{ form_widget(form.message) }}
-        </div>
-        <div class=" d-flex justify-content-end mt-3">
-            <input class="btn btn-light border-info font-weight-bold text-secondary " type='submit' value='Envoyer'>
-        </div>
-        {{ form_end(form) }}
     </section>
     {% include '_includes/_arrow_up.html.twig' %}
 {% endblock %}

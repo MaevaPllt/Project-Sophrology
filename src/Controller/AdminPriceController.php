@@ -39,6 +39,8 @@ class AdminPriceController extends AbstractController
             $entityManager->persist($price);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Vos modifications ont bien été mises à jour !');
+
             return $this->redirectToRoute('admin_price_index');
         }
 
@@ -59,6 +61,8 @@ class AdminPriceController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'Vos modifications ont bien été mises à jour !');
+
             return $this->redirectToRoute('admin_price_index');
         }
 
@@ -77,6 +81,8 @@ class AdminPriceController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($price);
             $entityManager->flush();
+
+            $this->addFlash('success', 'Vos modifications ont bien été mises à jour !');
         }
 
         return $this->redirectToRoute('admin_price_index');

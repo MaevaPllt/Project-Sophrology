@@ -39,22 +39,14 @@ class TestinessController extends AbstractController
             $entityManager->persist($testiness);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Vos modifications ont bien été mises à jour !');
+
             return $this->redirectToRoute('testiness_index');
         }
 
         return $this->render('testiness/new.html.twig', [
             'testiness' => $testiness,
             'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="testiness_show", methods={"GET"})
-     */
-    public function show(Testiness $testiness): Response
-    {
-        return $this->render('testiness/show.html.twig', [
-            'testiness' => $testiness,
         ]);
     }
 
@@ -68,6 +60,8 @@ class TestinessController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('success', 'Vos modifications ont bien été mises à jour !');
 
             return $this->redirectToRoute('testiness_index');
         }
@@ -87,6 +81,8 @@ class TestinessController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($testiness);
             $entityManager->flush();
+
+            $this->addFlash('success', 'Vos modifications ont bien été mises à jour !');
         }
 
         return $this->redirectToRoute('testiness_index');

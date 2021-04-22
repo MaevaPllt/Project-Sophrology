@@ -1,0 +1,76 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Particuliers | {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block body %}
+    <h1 class="text-center my-5 pt-3 text-secondary text-uppercase">Les Particuliers
+        <hr class="w-25 bg-info">
+    </h1>
+    <section class="my-5 py-3 bg-primary">
+        <div class="row justify-content-center mx-0 mx-2">
+            <div class="col-lg-3 m-4 p-2 background-contact">
+                <div class="card-body">
+                    <h3 class="text-center text-uppercase">Étape 1
+                        <hr class="w-50 bg-info">
+                    </h3>
+                    <p class="card-text ">Le déroulement d'une séance commence par un temps qui vous permet d’<strong>exprimer
+                            vos besoins</strong>, vos attentes.
+                        Je vous aide à définir l’<strong>objectif pour lequel vous souhaitez être accompagné(e)</strong>.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 m-4 p-2 background-contact">
+                <div class="card-body">
+                    <h3 class="text-center text-uppercase">Étape 2
+                        <hr class="w-25 bg-info">
+                    </h3>
+                    <p class="card-text">Je vous propose des <strong>exercices de respiration</strong> associés (ou non)
+                        à des mouvements
+                        physiques doux qui vous amènent peu à peu à un état de détente du corps et du mental.
+                        Cette relaxation est propice à l’émergence de la <strong>visualisation d’images
+                            positives</strong>.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 m-4 p-2 background-contact">
+                <div class="card-body">
+                    <h3 class="text-center text-uppercase">Étape 3
+                        <hr class="w-25 bg-info">
+                    </h3>
+                    <p class="card-text ">Un nouveau temps d'échange au cours duquel vous pouvez vous exprimer
+                        librement sur le vécu de votre séance. <br/>
+                        A l’issue de cet entretien, j’établis un<strong> programme de
+                            consultation</strong> pour vous faire atteindre l’objectif visé.</p>
+                </div>
+            </div>
+        </div>
+        <p class="text-center">* La pratique ne requiert aucune tenue particulière ni capacités physiques et tous les
+            exercices sont adaptables
+            à vos contraintes personnelles quelles qu'elles soient.
+        </p>
+    </section>
+
+    <section class="my-5 py-3 ">
+        <h2 class="title text-center mb-5 text-secondary text-uppercase">La sophrologie pour tous
+            <hr class="w-25 bg-info">
+        </h2>
+        {% for individual in individuals %}
+            <div class="row justify-content-center mx-0 card-position">
+
+                <div class="col-lg-3 my-3 bg-primary p-2 border ">
+                    <img class="w-100 h-100 background-individual"
+                         src="{{ vich_uploader_asset(individual, 'posterFile') }}"
+                         alt="{{ individual.name }}"/>
+                    <h2 class="text-uppercase font-weight-bold text-white text-center text-individual title-card-sophro ">{{ individual.name }}</h2>
+                </div>
+                <div class="col-lg-5 m-2 p-2 d-flex align-items-center text-justify">{{ individual.description|raw }}</div>
+
+            </div>
+        {% endfor %}
+    </section>
+    {% include '_includes/_arrow_up.html.twig' %}
+{% endblock %}
