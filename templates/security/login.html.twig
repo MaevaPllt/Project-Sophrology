@@ -28,14 +28,22 @@
                     <h3 class=" mb-3">Se connecter à votre espace</h3>
                     <label for="inputEmail">Entrez votre adresse Email</label>
                     <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
-                           class="form-control" required
+                           class="mb-3 form-control" required
                            autofocus>
-                    <label for="inputPassword">Entrez votre Mot de passe</label>
-                    <input type="password" name="password" id="inputPassword" class="form-control" required>
 
+                    <label for="inputPassword">Entrez votre Mot de passe</label>
+                    <div class="d-flex justify-content-center">
+                        <input type="password" name="password" id="inputPassword" class="form-control"
+                               required>
+                        <div class="logo-eye eye-off group-eyes">
+                            <img  src="{{ asset('build/images/eye_off.svg') }}" alt="logo-oeil-barré"/>
+                        </div>
+                        <div class="logo-eye eye group-eyes">
+                            <img src="{{ asset('build/images/eye.svg') }}" alt="logo-oeil-ouvert"/>
+                        </div>
+                    </div>
                     <input type="hidden" name="_csrf_token"
-                           value="{{ csrf_token('authenticate') }}"
-                    >
+                           value="{{ csrf_token('authenticate') }}">
 
                     {#
                     Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -56,12 +64,28 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center my-2">
+    <div class="row justify-content-center mb-3">
         <a class="text-white" href=""> Mot de passe oublié ?</a>
     </div>
     <div class="row justify-content-center">
         <a href="{{ path('home') }}" class="btn btn-light border-secondary">Retour au site</a>
     </div>
+    <script>
+        const eye = document.querySelector(".eye");
+        const eyeoff = document.querySelector(".eye-off");
+        const passwordField = document.querySelector("input[type=password]");
 
+        eye.addEventListener("click", () => {
+            eye.style.display = "none";
+            eyeoff.style.display = "block";
+            passwordField.type = "text";
+        });
+
+        eyeoff.addEventListener("click", () => {
+            eyeoff.style.display = "none";
+            eye.style.display = "block";
+            passwordField.type = "password";
+        });
+    </script>
     </body>
 {% endblock %}
