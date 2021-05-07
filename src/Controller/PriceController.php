@@ -15,7 +15,7 @@ class PriceController extends AbstractController
 {
 
     /**
-     * @Route("/price/", name="price")
+     * @Route("/tarifs/", name="price")
      * @param PriceRepository $priceRepository
      * @return Response
      */

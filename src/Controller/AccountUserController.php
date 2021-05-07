@@ -16,7 +16,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
  * Class AdminHomeController
  * @package App\Controller
  * @IsGranted("ROLE_USER")
- * @Route("/user", name="user_")
+ * @Route("/membre", name="user_")
  */
 class AccountUserController extends AbstractController
 {

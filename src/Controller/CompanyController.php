@@ -14,7 +14,7 @@ class CompanyController extends AbstractController
 {
 
     /**
-     * @Route("/company/", name="company")
+     * @Route("/entreprises/", name="company")
      * @param CompanyRepository $companyRepository
      * @return Response
      */

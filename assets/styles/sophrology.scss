@@ -1,11 +1,11 @@
 @import 'app.scss';
 
-.background-sophrology {
-  filter: brightness(80%);
-}
-
 .border {
   border-radius: $border;
+}
+
+.background-sophrology {
+  filter: brightness(80%);
 }
 
 .container-sophro {
@@ -39,7 +39,6 @@
 .container-sophro:hover .title-card-sophro {
   opacity: 0;
 }
-
 
 .text-sophro {
   position: absolute;
