@@ -14,7 +14,7 @@ class IndividualController extends AbstractController
 {
 
     /**
-     * @Route("/individual/", name="individual")
+     * @Route("/particuliers/", name="individual")
      * @return Response
      */
     public function index(IndividualRepository $individualRepository): Response

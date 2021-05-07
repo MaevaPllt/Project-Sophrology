@@ -14,7 +14,7 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
- * @Route("/admin_company")
+ * @Route("/admin/entreprises")
  */
 class AdminCompanyController extends AbstractController
 {

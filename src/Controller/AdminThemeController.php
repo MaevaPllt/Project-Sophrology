@@ -14,7 +14,7 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
- * @Route("/theme")
+ * @Route("/admin/themes_accompagnement")
  */
 class AdminThemeController extends AbstractController
 {

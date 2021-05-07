@@ -29,6 +29,8 @@ final class Version20210416152817 extends AbstractMigration
         $this->addSql('ALTER TABLE theme CHANGE uploaded_at updated_at DATETIME DEFAULT NULL');
         $this->addSql('CREATE TABLE company (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, description LONGTEXT NOT NULL, poster LONGTEXT NOT NULL, updated_at DATETIME DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE individual (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, description LONGTEXT NOT NULL, poster LONGTEXT NOT NULL, updated_at DATETIME DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE repport (id INT AUTO_INCREMENT NOT NULL, patient_id INT NOT NULL, message LONGTEXT NOT NULL, date DATE NOT NULL, INDEX IDX_25A5E28A6B899279 (patient_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE repport ADD CONSTRAINT FK_25A5E28A6B899279 FOREIGN KEY (patient_id) REFERENCES user (id)');
     }
 
     public function down(Schema $schema) : void
@@ -43,5 +45,6 @@ final class Version20210416152817 extends AbstractMigration
         $this->addSql('ALTER TABLE theme CHANGE updated_at uploaded_at DATETIME DEFAULT NULL');
         $this->addSql('DROP TABLE company');
         $this->addSql('DROP TABLE individual');
+        $this->addSql('DROP TABLE repport');
     }
 }
