@@ -10,12 +10,12 @@
     <section class="bg-secondary my-5 py-5">
         <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord de
             <strong class="text-info">{{ app.user.firstname }} {{ app.user.lastname }}</strong></h1>
-        <h2 class="text-center"><span class="text-white">Bienvenue sur INPIRE</span> <span class="text-info">& EXPIRE</span>
+        <h2 class="text-center"><span class="text-white">Bienvenue sur INSPIRE</span> <span class="text-info">& EXPIRE</span>
             <hr class="w-25 bg-info">
         </h2>
-        <div class="row justify-content-center mx-0 mx-2">
-            <div class="col-lg-3 m-4 p-2 bg-primary border">
-                <div class="card-body">
+        <div class="row justify-content-center mx-0">
+            <div class="col-lg-3  m-4 p-2 bg-primary border card-account">
+                <div class="card-body ">
                     <div class="d-flex justify-content-between">
                         <img class="logo" src="{{ asset('build/images/information.svg') }}" alt="logo-outils"/>
                         <div class="mx-4">
@@ -30,23 +30,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 m-4 p-2 bg-primary border">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <img class="logo" src="{{ asset('build/images/pay.svg') }}" alt="logo-argent-carte-bancaire"/>
-                        <div class="mx-4">
-                            <h3 class="card-text font-weight-bold">Paiement en ligne sécurisé</h3>
-                            <p class="card-text">Avec cette fonctionnalité, vous pouvez payer en ligne vos séances de manière
-                            totalement sécurisée.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-end">
-                    <a class="btn btn-light border-secondary mx-4" href="">Voir plus</a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 m-4 p-2 bg-primary border">
+            <div class="col-lg-3 m-4 p-2 bg-primary border card-account">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <img class="logo" src="{{ asset('build/images/calendar.svg') }}" alt="logo-calendrier"/>
@@ -62,7 +46,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 m-4 p-2 bg-primary border">
+            <div class="col-lg-3 m-4 p-2 bg-primary border card-account">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <img class="logo" src="{{ asset('build/images/repport.svg') }}" alt="logo-rapport-message"/>

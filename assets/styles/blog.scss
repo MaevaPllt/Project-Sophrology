@@ -1,53 +1,29 @@
 @import 'app.scss';
 
-.logo {
-  width: 50%;
-  height: 50%;
-}
-
-.quotes {
-  width: 5%;
-  height: 5%;
-}
-
-.background-speciality {
-  filter: brightness(70%);
-}
-
 .border {
   border-radius: $border;
 }
 
-.background-contact {
-  background-image: url("../images/colour.png");
-  background-size: cover;
+.image-sophro {
+  filter: brightness(70%);
 }
 
-.title-card-individual {
+.title-card-sophro {
   opacity: 1;
 }
 
-.text-individual {
+.text-sophro {
   position: absolute;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.background-individual {
-  filter: brightness(70%);
-}
-
-.card-position:nth-child(2n+1) {
-  display: flex;
-  flex-direction: row-reverse;
-}
 
 .card-blog-hover .card-blog{
   overflow: hidden;
   position: relative;
 }
-
 .card-blog-hover .card-blog img {
   transition: all 0.5s;
 }

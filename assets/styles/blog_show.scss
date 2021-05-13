@@ -1,0 +1,28 @@
+@import 'app.scss';
+
+.border {
+  border-radius: $border;
+}
+
+.image-sophro {
+  filter: brightness(70%);
+}
+
+.title-card-sophro {
+  opacity: 1;
+}
+
+.text-sophro {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1000px) {
+  .text-sophro {
+    display: none;
+  }
+}

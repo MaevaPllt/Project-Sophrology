@@ -1,0 +1,81 @@
+{% extends 'layout_admin.html.twig' %}
+{% form_theme form_search_filter 'bootstrap_4_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('account') }}
+{% endblock %}
+
+{% block title %}Espace Administrateur| {{ parent() }}{% endblock %}
+
+{% block body %}
+    <section class="bg-secondary my-5 p-5 ">
+        <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord de
+            <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong>
+            <hr class="w-25 bg-info">
+        </h1>
+        <div class="container bg-primary border mb-4">
+            <h2 class="my-3 ">Le Blog d'actualités- <strong>Index</strong></h2>
+            <div class="row mb-4 d-flex justify-content-between">
+                <div class="col-lg-3">
+                    <a class="btn btn-light mb-2" href="{{ path('admin_event_new') }}">
+                        <img width="20em" height="20em" src="{{ asset('build/images/plus.svg') }}"
+                             alt="logo-plus-ajouter"/>
+                        Créer une nouvelle actualité</a>
+                </div>
+                <div class="border bg-light col-lg-4 col-md-3 p-3 mr-4">
+                    {{ form(form_search_filter) }}
+                </div>
+            </div>
+            <table class="table">
+                <thead class="">
+                <tr class="">
+                    <th>Numéro</th>
+                    <th>Catégorie</th>
+                    <th>Nom</th>
+                    <th>Date de l'événement</th>
+                    <th>Résumé</th>
+                    <th>Image</th>
+                    <th>Contenu</th>
+                    <th>État</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for event in events %}
+                    <tr class="">
+                        <td class="font-weight-bold">{{ event.id }}</td>
+                        <td>{{ event.category.name }}</td>
+                        <td>{{ event.name }}</td>
+                        <td>{{ event.date ? event.date|date('d-m-Y') : '' }}</td>
+                        <td>{{ event.resume|raw }}</td>
+                        <td><img class="img-thumbnail little" src="{{ vich_uploader_asset(event, 'posterFile') }}"
+                                 alt="{{ event.name }}"></td>
+                        <td>{{ event.content|raw }}</td>
+                        <td>
+                            <a class="btn btn-outline-success ml-2"
+                               href="{{ path('admin_event_edit', {'id': event.id}) }}">
+                                <img width="25em" height="30em"
+                                     src="{{ asset('build/images/pencil.svg') }}" alt="logo-crayon-modifier"
+                                     title="Modifier"/>
+                                <span>{{ include('admin_event/_delete_form.html.twig') }}</span>
+                            </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">Vous n'avez pas d'Actualité d'enregistrée pour le moment</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="my-2">
+                <a class="btn btn-light border-secondary" href="{{ path("admin_home") }}">
+                    Retour au tableau de bord
+                </a>
+                <a class="btn btn-light border-secondary" href="{{ path("blog_index") }}">
+                    Voir les modifications
+                </a>
+            </div>
+        </div>
+    </section>
+    {% include '_includes/_arrow_up.html.twig' %}
+{% endblock %}
