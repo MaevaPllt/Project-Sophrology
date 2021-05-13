@@ -23,6 +23,7 @@ class TestinessType extends AbstractType
             ])
             ->add('date', DateType::class, [
                 'label' => 'Date',
+                'format' => 'dd-MM-yyyy',
             ])
             ->add('content', CKEditorType::class, [
                 'label' => 'Témoignage',

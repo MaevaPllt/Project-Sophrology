@@ -20,6 +20,7 @@ class RepportType extends AbstractType
             ->add('date', DateType::class, [
                 'label' => 'Date de la séance',
             ])
+            ->add('patient')
         ;
     }
 

@@ -28,7 +28,7 @@ class AccountUserController extends AbstractController
     public function index(): Response
     {
         $this->addFlash('success', 'Ravi de vous revoir ' . $this->getUser()->getFirstname() .
-            ' ! Il y a peut-être du nouveau sur votre tableau de bord INSPIRE & EXPIRE !' ?? '');
+            ' ! Il y a peut-être du nouveau sur votre tableau de bord !' ?? '');
 
         return $this->render('account_user/user_home.html.twig');
     }

@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Le Blog | {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('blog_show') }}
+{% endblock %}
+
+{% block body %}
+    <h1 class="text-center my-5 pt-3 text-secondary text-uppercase">Le Blog d'actualités
+        <hr class="w-25 bg-info">
+    </h1>
+    <div class="my-5 py-3 bg-primary border container">
+        <div class="d-flex justify-content-center">
+            <img class="shadow p-1 lack w-50  border image-sophro"
+                 src="{{ vich_uploader_asset(event, 'posterFile') }}"
+                 alt="{{ event.name }}"/>
+            <h3 class="text-uppercase font-weight-bold text-white text-center text-sophro title-card-sophro  ">
+                {{ event.name }}</h3>
+        </div>
+        <div class="card-body mt-3">
+            <div class="d-flex ">
+                <p class="card-text font-weight-bold text-uppercase mr-2">{{ event.name }}</p>
+                <p class="card-text font-weight-bold">({{ event.date|date('d/m/Y') }})</p>
+            </div>
+            <p class="card-text">{{ event.resume|raw }}</p>
+            <p class="card-text">{{ event.content|raw }}</p>
+        </div>
+        <a class="btn btn-light border-secondary mx-4" href="{{ path('blog_index') }}">Retour au blog</a>
+    </div>
+    <script async
+            src="//book.timify.com/widget/widget.min.js"
+            id="timify-widget"
+            data-position="left"
+            data-locale="fr-fr"
+            data-account-id="6087ffc9f75db8115b1c374c"
+            data-locale="fr-fr"
+    ></script>
+    {% include '_includes/_arrow_up.html.twig' %}
+{% endblock %}

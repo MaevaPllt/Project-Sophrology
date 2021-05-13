@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Repository\EventRepository;
 use App\Repository\TestinessRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,9 +20,10 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      * @param TestinessRepository $testinessRepository
+     * @param EventRepository $eventRepository
      * @return Response
      */
-    public function index(TestinessRepository $testinessRepository, Request $request, MailerInterface $mailer): Response
+    public function index(TestinessRepository $testinessRepository, Request $request, MailerInterface $mailer, EventRepository $eventRepository): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -41,6 +43,7 @@ class HomeController extends AbstractController
         return $this->render("home/index.html.twig", [
             'testinesses' => $testinessRepository->findAll(),
             'form' => $form->createView(),
+            'events' => $eventRepository->getEventsDate(),
         ]);
     }
 }

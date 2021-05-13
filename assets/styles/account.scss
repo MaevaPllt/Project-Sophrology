@@ -8,3 +8,18 @@
 .border {
   border-radius: $border;
 }
+
+
+.card-account:hover {
+  transform: scale(1.1);
+}
+
+.card-account {
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 1000px) {
+  .card-account:hover {
+    transform: scale(1.0);
+  }
+}
