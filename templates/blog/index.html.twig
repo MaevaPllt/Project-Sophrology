@@ -1,5 +1,5 @@
 {% extends 'layout.html.twig' %}
-{% form_theme form_search_category 'bootstrap_4_layout.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 
 {% block title %}Le Blog | {{ parent() }}{% endblock %}
@@ -13,8 +13,17 @@
         <hr class="w-25 bg-info">
     </h1>
     <section class="bg-primary row justify-content-center mx-0 my-5 py-4">
-        <div class="border bg-light border-info col-lg-2 col-md-3 p-3">
-            {{ form(form_search_category) }}
+        <div class="border bg-light col-lg-3 col-md-3 p-3 my-3">
+            {{ form_start(form) }}
+            {{ form_label(form.name, 'Recherche par catégories') }}
+            <div class="d-flex justify-content-between">
+                {{ form_widget(form.name) }}
+                <button class="btn btn-light border-primary mx-2" type="submit">
+                    <img width="25em" height="25em" src="{{ asset('build/images/search.svg') }}"
+                         alt="logo-recherche-loupe"/>
+                </button>
+            </div>
+            {{ form_end(form) }}
         </div>
         <div class="col-lg-5 col-md-5 pt-4 ml-4">
             <h2 class="text-center text-secondary">Sophrologie et Découverte

@@ -1,5 +1,5 @@
 {% extends 'layout_admin.html.twig' %}
-{% form_theme form_search_filter 'bootstrap_4_layout.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('account') }}
@@ -23,7 +23,16 @@
                         Créer une nouvelle actualité</a>
                 </div>
                 <div class="border bg-light col-lg-4 col-md-3 p-3 mr-4">
-                    {{ form(form_search_filter) }}
+                    {{ form_start(form) }}
+                    {{ form_label(form.search, 'Recherche par mot-clés') }}
+                    <div class="d-flex justify-content-between">
+                        {{ form_widget(form.search) }}
+                        <button class="btn btn-light border-primary mx-2" type="submit">
+                            <img width="25em" height="25em" src="{{ asset('build/images/search.svg') }}"
+                                 alt="logo-recherche-loupe"/>
+                        </button>
+                    </div>
+                    {{ form_end(form) }}
                 </div>
             </div>
             <table class="table">

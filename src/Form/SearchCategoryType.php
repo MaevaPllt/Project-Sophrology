@@ -17,13 +17,8 @@ class SearchCategoryType extends AbstractType
         $builder
             ->add('name', EntityType::class, [
                 'class' => Category::class,
-                'label' =>'Recherche par catégories',
                 'choice_label' => 'name',
-            ])
-            ->add('submit', SubmitType::class, [
-                'label' => 'Rechercher',
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

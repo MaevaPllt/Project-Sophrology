@@ -29,12 +29,12 @@ class BlogController extends AbstractController
     public function index(EventRepository $eventRepository, Request $request): Response
     {
 
-        $form_search_category = $this->createForm(SearchCategoryType::class);
-        $form_search_category->handleRequest($request);
+        $form = $this->createForm(SearchCategoryType::class);
+        $form->handleRequest($request);
         $events = $eventRepository->findAll();
 
-        if ($form_search_category->isSubmitted() && $form_search_category->isValid()) {
-            $name = $form_search_category->getData()['name'];
+        if ($form->isSubmitted() && $form->isValid()) {
+            $name = $form->getData()['name'];
             $events = $eventRepository->findBy(['category' => $name]);
         } else {
             $events = $eventRepository->findAll();
@@ -42,7 +42,7 @@ class BlogController extends AbstractController
 
         return $this->render("blog/index.html.twig", [
             'events' => $events,
-            'form_search_category' => $form_search_category->createView(),
+            'form' => $form->createView(),
         ]);
     }
 
