@@ -31,11 +31,11 @@ class BlogController extends AbstractController
 
         $form = $this->createForm(SearchCategoryType::class);
         $form->handleRequest($request);
-        $events = $eventRepository->findAll();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $name = $form->getData()['name'];
             $events = $eventRepository->findBy(['category' => $name]);
+
         } else {
             $events = $eventRepository->findAll();
         }
