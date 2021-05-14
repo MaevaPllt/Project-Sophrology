@@ -40,27 +40,27 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {% if app.user %}
-                    <a class="dropdown-item pl-2 mb-1" href="{{ path('app_logout') }}">
+                    <a class="dropdown-item pl-2 py-2 mb-1" href="{{ path('app_logout') }}">
                         <img class="logo-navbar" src="{{ asset('build/images/deconnect.svg') }}" alt="logo-user-deconnexion-compte"/>
                         Se déconnecter
                     </a>
 
                         {% if is_granted("ROLE_ADMIN") %}
-                            <a class="dropdown-item pl-2 bg-info" href="{{ path("admin_home") }}">
+                            <a class="dropdown-item pl-2 py-2 bg-info" href="{{ path("admin_home") }}">
                                 <img class="logo-navbar" src="{{ asset('build/images/admin.svg') }}" alt="logo-ordinateur-admin"/>
                                 Compte Admin
                             </a>
                         {% else %}
-                            <a class="dropdown-item pl-2 bg-info" href="{{ path('user_home') }}">
+                            <a class="dropdown-item pl-2 py-2 bg-info" href="{{ path('user_home') }}">
                                 <img class="logo-navbar" src="{{ asset('build/images/user.svg') }}" alt="logo-user-membre-compte"/>
                                 Compte Membre
                             </a>
                         {% endif %}
                     {% else %}
-                    <a class="dropdown-item pl-2" href="{{ path('app_login') }}">
+                    <a class="dropdown-item pl-2 py-2" href="{{ path('app_login') }}">
                         <img class="logo-navbar" src="{{ asset('build/images/connect.svg') }}" alt="logo-user-connexion-compte"/>
                         Se connecter</a>
-                    <a class="dropdown-item pl-2" href="{{ path('app_register') }}">
+                    <a class="dropdown-item pl-2 py-2" href="{{ path('app_register') }}">
                         <img class="logo-navbar" src="{{ asset('build/images/account.svg') }}" alt="logo-nouveau-user-compte"/>
                         Créer un compte</a>
                     {% endif %}

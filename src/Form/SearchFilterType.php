@@ -17,6 +17,9 @@ class SearchFilterType extends AbstractType
         $builder
             ->add('search',  SearchType::class, [
                 'required' => false,
+                'attr' => [
+                    'placeholder' => 'Recherche par mots-clés',
+                ],
             ]);
     }
 
