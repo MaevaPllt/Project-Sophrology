@@ -17,12 +17,7 @@ class SearchFilterType extends AbstractType
         $builder
             ->add('search',  SearchType::class, [
                 'required' => false,
-                'label' => 'Recherche par mots-clés',
-            ])
-            ->add('submit', SubmitType::class, [
-                'label' => 'Rechercher',
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

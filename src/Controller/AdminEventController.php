@@ -21,12 +21,12 @@ class AdminEventController extends AbstractController
      */
     public function index(Request $request, EventRepository $eventRepository): Response
     {
-        $form_search_filter = $this->createForm(SearchFilterType::class);
-        $form_search_filter->handleRequest($request);
+        $form = $this->createForm(SearchFilterType::class);
+        $form->handleRequest($request);
         $events = $eventRepository->findAll();
 
-        if ($form_search_filter->isSubmitted() && $form_search_filter->isValid()) {
-            $search = $form_search_filter->getData()['search'];
+        if ($form->isSubmitted() && $form->isValid()) {
+            $search = $form->getData()['search'];
             if (!empty($search)) {
                 $events = $eventRepository->findLikeName($search);
             } else {
@@ -36,7 +36,7 @@ class AdminEventController extends AbstractController
 
         return $this->render('admin_event/index.html.twig', [
             'events' => $events,
-            'form_search_filter' => $form_search_filter->createView(),
+            'form' => $form->createView(),
         ]);
     }
 
