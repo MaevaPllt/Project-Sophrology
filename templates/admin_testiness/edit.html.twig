@@ -17,9 +17,9 @@
     <h2 class="my-3">Modifications du témoignage de <strong>{{ testiness.name }}</strong> en date du
         <strong>{{ testiness.date ? testiness.date|date('d-m-Y') : '' }}</strong></h2>
 
-    {{ include('testiness/_form.html.twig', {'button_label': 'Modifier'}) }}
+    {{ include('admin_testiness/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a class="btn btn-light border-secondary my-2" href="{{ path('testiness_index') }}">Retour à l'index</a>
+    <a class="btn btn-light border-secondary my-2" href="{{ path('admin_testiness_index') }}">Retour à l'index</a>
     </div>
 </section>
     {% include '_includes/_arrow_up.html.twig' %}

@@ -19,6 +19,17 @@ class TestinessRepository extends ServiceEntityRepository
         parent::__construct($registry, Testiness::class);
     }
 
+    // FILTRE DE TÉMOIGNAGES PAR MOTS-CLÉS
+    public function findLikeName( string $name)
+    {
+        $queryBuilder = $this->createQueryBuilder('t')
+            ->Where("t.name LIKE :name")
+            ->setParameter('name', '%' . $name . '%')
+        ;
+        return $queryBuilder->getQuery()->getResult();
+    }
+
+
     // /**
     //  * @return Testiness[] Returns an array of Testiness objects
     //  */
