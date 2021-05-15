@@ -13,7 +13,7 @@
         <hr class="w-25 bg-info">
     </h1>
     <section class="bg-primary row justify-content-center mx-0 my-5 py-4">
-        <div class=" col-lg-3 col-md-3 my-5 mx-5">
+        <div class="col-lg-3 col-md-3 my-4 mx-5">
             {{ form_start(form) }}
             <div class="d-flex justify-content-between">
                 {{ form_widget(form.name) }}
@@ -24,10 +24,7 @@
             </div>
             {{ form_end(form) }}
         </div>
-        <div class="col-lg-5 col-md-5 pt-4 ml-4">
-            <h2 class="text-center text-secondary">Sophrologie et Découverte
-                <hr class="w-50 bg-info">
-            </h2>
+        <div class="col-lg-5 col-md-5 pt-4">
             <p>Retrouvez toutes les actualités du site, des conseils sur la sophrologie, les événements auxquels je participe
                 et découvrez de nouveaux ateliers à faire chez vous en prolongement des séances.</p>
         </div>
@@ -51,7 +48,7 @@
                             <p class="card-text font-weight-bold">{{ event.date|date('d/m/Y') }}</p>
                         </div>
                         <p class="card-text">{{ event.resume|raw }}</p>
-                        <a class="nav-link btn btn-light border-secondary mx-5"
+                        <a class="nav-link btn btn-secondary text-light mx-5"
                            href="{{ path ('blog_show',{'id' :event.id}) }}">Voir le détail</a>
                     </div>
                 </div>
