@@ -47,11 +47,12 @@
                 <div class="col-lg-3 m-4 bg-primary p-2 container-sophro border">
                     <img class="w-100 h-100 image-sophro" src="{{ vich_uploader_asset(theme, 'posterFile') }}"
                          alt="{{ theme.name }}"/>
-                    <h2 class="text-uppercase font-weight-bold text-white text-center text-sophro title-card-sophro ">{{ theme.name }}</h2>
+                    <h2 class="text-uppercase font-weight-bold text-white text-center text-sophro title-card-sophro">{{ theme.name }}</h2>
                     <div class="overlay-sophro">
-                        <div class="text-sophro text-white text-center font-weight-bold d-none d-md-block">{{ theme.description|raw }}</div>
+                        <div class="text-sophro text-white text-center font-weight-bold">{{ theme.description|raw }}</div>
                     </div>
                 </div>
+                <div class="overlay-sophro-responsive container text-dark">{{ theme.description|raw }}</div>
             {% endfor %}
         </div>
     </section>

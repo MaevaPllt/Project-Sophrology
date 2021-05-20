@@ -36,10 +36,9 @@
   transition: all 0.2s;
 }
 
-.logo-responsive {
+.logo-responsive, .border {
   border-radius: $border;
 }
-
 
 @media screen and (max-width: 1000px) {
 

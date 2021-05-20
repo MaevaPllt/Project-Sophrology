@@ -63,9 +63,10 @@
                          alt="{{ company.name }}"/>
                     <h2 class="text-uppercase font-weight-bold text-white text-center text-sophro title-card-sophro ">{{ company.name }}</h2>
                     <div class="overlay-sophro">
-                        <div class="text-sophro text-white text-center font-weight-bold d-none d-md-block">{{ company.description|raw }}</div>
+                        <div class="text-sophro text-white text-center font-weight-bold">{{ company.description|raw }}</div>
                     </div>
                 </div>
+                <div class="overlay-sophro-responsive text-center text-dark">{{ company.description|raw }}</div>
             {% endfor %}
         </div>
     </section>
