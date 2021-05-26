@@ -19,7 +19,8 @@
         <div class="row justify-content-center mx-0 mx-2 my-5">
             <div class="col-lg-4 m-4 p-2 bg-primary border">
                 <div class="d-flex justify-content-center mb-3">
-                    <img class="w-50 h-25" src="{{ asset('build/images/logo.png') }}" alt="logo-inspire-expire-sophrologie"/>
+                    <img class="w-75 h-25" src="{{ asset('build/images/logo.png') }}"
+                         alt="logo-inspire-expire-sophrologie"/>
                 </div>
                 <div class="card-body">
                     <h3 class=" mb-3">Créer un nouveau compte</h3>
@@ -40,14 +41,15 @@
                     </div>
                     <div class="d-flex flex-column">
                         {{ form_label(registrationForm.plainPassword) }}
-                        {{ form_widget(registrationForm.plainPassword) }}
-                    </div>
-
-                    <div class="logo-eye eye-off group-eyes">
-                        <img class="" src="{{ asset('build/images/eye_off.svg') }}" alt="logo-oeil-barré"/>
-                    </div>
-                    <div class="logo-eye eye group-eyes">
-                        <img class="" src="{{ asset('build/images/eye.svg') }}" alt="logo-oeil-ouvert"/>
+                        <div class="d-flex justify-content-center">
+                            {{ form_widget(registrationForm.plainPassword) }}
+                            <div class="mx-2">
+                                <img class="logo-eye eye-off align-self-center"
+                                     src="{{ asset('build/images/eye_off.svg') }}" alt="logo-oeil-barré"/>
+                                <img class="logo-eye eye align-self-center" src="{{ asset('build/images/eye.svg') }}"
+                                     alt="logo-oeil-ouvert"/>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="my-3">

@@ -5,29 +5,11 @@
   border-radius: $border;
 }
 
-.logo {
-  width: 50%;
-  height: 30%;
-}
-
 .logo-eye {
-  width: 5%;
-  height: 5%;
-}
-
-.group-eyes {
-  position: absolute;
-  top: 70%;
-  right: $font-size-h1;
-  transform: translateY(-40%);
+  width: $font-size-h2;
+  height: $font-size-h2;
 }
 
 .eye-off {
   display: none;
-}
-
-@media screen and (max-width: 1000px) {
-  .eye, .eye-off {
-    display: none;
-  }
 }
