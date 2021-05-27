@@ -53,7 +53,7 @@
                         <td class="font-weight-bold">{{ event.id }}</td>
                         <td>{{ event.category.name }}</td>
                         <td>{{ event.name }}</td>
-                        <td>{{ event.date ? event.date|date('d-m-Y') : '' }}</td>
+                        <td>{{ event.date is empty ? "" : event.date|date('d/m/Y') }}</td>
                         <td>{{ event.resume|raw }}</td>
                         <td><img class="img-thumbnail little" src="{{ vich_uploader_asset(event, 'posterFile') }}"
                                  alt="{{ event.name }}"></td>
