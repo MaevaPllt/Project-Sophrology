@@ -51,7 +51,7 @@
                         <td class="font-weight-bold">{{ testiness.id }}</td>
                         <td>{{ testiness.name }}</td>
                         <td>{{ testiness.age }}</td>
-                        <td>{{ testiness.date ? testiness.date|date('d-m-Y') : '' }}</td>
+                        <td>{{ testiness.date is empty ? "" :  testiness.date|date('d-m-Y') }}</td>
                         <td>{{ testiness.content|raw }}</td>
                         <td>
                             <a class="btn btn-outline-success ml-2"

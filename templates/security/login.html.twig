@@ -1,9 +1,10 @@
+{% extends 'layout.html.twig' %}
 {% block stylesheets %}
     {{ encore_entry_link_tags('login') }}
 {% endblock %}
 
 {% block body %}
-    <body class="bg-secondary my-5 py-5">
+    <section class="bg-secondary my-5 py-5">
     <h1 class="text-center text-uppercase text-light mb-3">Espace connexion
         <hr class="w-25 bg-info">
     </h1>
@@ -87,5 +88,5 @@
             passwordField.type = "password";
         });
     </script>
-    </body>
+    </section>
 {% endblock %}

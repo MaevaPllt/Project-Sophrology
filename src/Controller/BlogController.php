@@ -8,6 +8,7 @@ use App\Form\SearchFilterType;
 use App\Form\SearchCategoryType;
 use App\Repository\CategoryRepository;
 use App\Repository\EventRepository;
+use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -56,4 +57,5 @@ class BlogController extends AbstractController
             'event' => $event,
         ]);
     }
+
 }
