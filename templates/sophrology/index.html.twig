@@ -12,27 +12,35 @@
     </h1>
     <section class="row bg-primary justify-content-around mx-0 my-5 py-5">
         <div class="col-lg-5 col-md-5 my-2">
-            <img class="shadow p-1 lack w-100 border background-sophrology" src="{{ asset('build/images/cactus.jpg') }}" alt="image-cactus-plante"/>
+            <img class="shadow p-1 lack w-100 border background-image-card" src="{{ asset('build/images/cactus.jpg') }}"
+                 alt="image-cactus-plante"/>
         </div>
         <div class="col-lg-6 col-md-5">
             <h2 class="text-center text-secondary my-3">Sophrologie et Bien-Être
                 <hr class="w-50 bg-info">
             </h2>
-           <p class="mb-5">
-               La sophrologie est une méthode de relaxation psychocorporelle qui permet de retrouver un <strong class="text-secondary">bien-être au quotidien</strong>,
-               de prendre conscience de ses propres capacités et de les développer.
-               La sophrologie combine des <strong class="text-secondary">exercices de respiration, de détente musculaire et de visualisation mentale positive</strong>.
-               Elle s’appuie sur des techniques occidentales (hypnose, autosuggestion) et des pratiques orientales (yoga, méditation).
-               Il s’agit d’un <strong class="text-secondary">outil de développement personnel</strong> reconnu par l’Organisation Mondiale de la Santé et le corps médical en
-               tant que thérapie complémentaire à la médecine classique et à la psychothérapie.
-           </p>
+            <p class="mb-5">
+                La sophrologie est une méthode de relaxation psychocorporelle qui permet de retrouver un <strong
+                        class="text-secondary">bien-être au quotidien</strong>,
+                de prendre conscience de ses propres capacités et de les développer.
+                La sophrologie combine des <strong class="text-secondary">exercices de respiration, de détente
+                    musculaire et de visualisation mentale positive</strong>.
+                Elle s’appuie sur des techniques occidentales (hypnose, autosuggestion) et des pratiques orientales
+                (yoga, méditation).
+                Il s’agit d’un <strong class="text-secondary">outil de développement personnel</strong> reconnu par
+                l’Organisation Mondiale de la Santé et le corps médical en
+                tant que thérapie complémentaire à la médecine classique et à la psychothérapie.
+            </p>
             <h2 class="text-center text-secondary my-4">Mes valeurs et mes engagements
                 <hr class="w-50 bg-info">
             </h2>
             <p class="">
-                Je suis soumise au <strong class="text-secondary">secret professionnel et au code de déontologie des sophrologues</strong>. Je vous accueille
-                dans la <strong class="text-secondary">bienveillance, sans jugement et en toute confidentialité</strong>. Je vous propose un parcours d'accompagnement
-                personnalisé, clairement établi. Sachez que les exercices pratiqués au cours de la séance sont choisis et adaptés
+                Je suis soumise au <strong class="text-secondary">secret professionnel et au code de déontologie des
+                    sophrologues</strong>. Je vous accueille
+                dans la <strong class="text-secondary">bienveillance, sans jugement et en toute confidentialité</strong>.
+                Je vous propose un parcours d'accompagnement
+                personnalisé, clairement établi. Sachez que les exercices pratiqués au cours de la séance sont choisis
+                et adaptés
                 en fonction des capacités physiques et de l’âge (enfant/ adolescent/adulte).
             </p>
         </div>
@@ -42,14 +50,16 @@
         <h2 class="title text-center mb-4 text-secondary text-uppercase">Vers un accompagnement
             <hr class="w-25 bg-info">
         </h2>
-        <div class="row justify-content-center mx-0 mx-2">
-            {% for theme in themes%}
+        <div class="row justify-content-center mx-0">
+            {% for theme in themes %}
                 <div class="col-lg-3 m-4 bg-primary p-2 container-sophro border">
-                    <img class="w-100 h-100 image-sophro" src="{{ vich_uploader_asset(theme, 'posterFile') }}"
+                    <img class="w-100 h-100 background-image-card" src="{{ vich_uploader_asset(theme, 'posterFile') }}"
                          alt="{{ theme.name }}"/>
-                    <h2 class="text-uppercase font-weight-bold text-white text-center text-sophro title-card-sophro">{{ theme.name }}</h2>
+                    <div class="title-card-sophro">
+                        <h2 class="text-uppercase font-weight-bold text-white text-sophro ">{{ theme.name }}</h2>
+                    </div>
                     <div class="overlay-sophro">
-                        <div class="text-sophro text-white text-center font-weight-bold">{{ theme.description|raw }}</div>
+                        <div class="text-sophro text-white font-weight-bold">{{ theme.description|raw }}</div>
                     </div>
                 </div>
                 <div class="overlay-sophro-responsive text-center text-dark">{{ theme.description|raw }}</div>
