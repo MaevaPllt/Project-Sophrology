@@ -1,66 +1,79 @@
 @import 'app.scss';
 
-.border {
-  border-radius: $border;
-}
+/********* Superposition texte sur image *******/
 
-.background-sophrology {
-  filter: brightness(80%);
-}
+/* Conteneur principal*/
 
 .container-sophro {
   position: relative;
 }
 
-.image-sophro {
-  filter: brightness(70%);
-}
-
-.title-card-sophro {
-    opacity: 1;
-}
-
-.overlay-sophro {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-}
-
-.container-sophro:hover .overlay-sophro {
-  opacity: 1;
-}
-
-.container-sophro:hover .title-card-sophro {
-  opacity: 0;
-}
+/* position du texte */
 
 .text-sophro {
+  text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 90%;
 }
+
+.border {
+  border-radius: $border;
+}
+
+.background-image-card {
+  filter: brightness(70%);
+}
+
+/********* Hover image et texte *******/
+
+
+.container-sophro {
+  .overlay-sophro {
+    position: absolute;
+    top: 0;
+    height: 90%;
+    width: 90%;
+    opacity: 0;
+  }
+  /* Overlay survol souris */
+  &:hover .overlay-sophro {
+    opacity: 1;
+    transition: .5s ease;
+  }
+
+  .title-card-sophro {
+    opacity: 1;
+  }
+
+  /*Hover texte au survol */
+  &:hover .title-card-sophro {
+    opacity: 0;
+    transition: .5s ease;
+  }
+}
+
+
 
 .overlay-sophro-responsive {
   display: none;
 }
 
+/* Réorganisation des éléments en responsive */
 @media screen and (max-width: 1000px) {
+  .container-sophro:hover {
+    .title-card-sophro {
+      opacity: 1;
+    }
 
-  .container-sophro:hover .title-card-sophro {
-    opacity: 1;
+    .overlay-sophro {
+      opacity: 0;
+    }
   }
-  .container-sophro:hover .overlay-sophro {
-    opacity: 0;
-  }
+
   .overlay-sophro-responsive {
     display: block;
   }
 }
-

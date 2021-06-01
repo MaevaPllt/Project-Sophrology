@@ -12,7 +12,7 @@
     </h1>
     <section class="row bg-primary justify-content-around mx-0 my-5 py-5">
         <div class="col-lg-5 col-md-5">
-            <img class="shadow p-1 lack w-100 border background-sophrology"
+            <img class="shadow p-1 lack w-100 border background-image-card"
                  src="{{ asset('build/images/company.jpg') }}" alt="image-ordinateur-entreprise-travail"/>
         </div>
         <div class="col-lg-6 col-md-5">
@@ -59,7 +59,7 @@
         <div class="row justify-content-center mx-0 mx-2">
             {% for company in companies %}
                 <div class="col-lg-3 m-4 bg-primary p-2 container-sophro border">
-                    <img class="w-100 h-100 image-sophro" src="{{ vich_uploader_asset(company, 'posterFile') }}"
+                    <img class="w-100 h-100 background-image-card" src="{{ vich_uploader_asset(company, 'posterFile') }}"
                          alt="{{ company.name }}"/>
                     <h2 class="text-uppercase font-weight-bold text-white text-center text-sophro title-card-sophro ">{{ company.name }}</h2>
                     <div class="overlay-sophro">
