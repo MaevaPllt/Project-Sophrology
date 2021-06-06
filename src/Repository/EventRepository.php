@@ -19,7 +19,7 @@ class EventRepository extends ServiceEntityRepository
         parent::__construct($registry, Event::class);
     }
 
-    // FILTRE D'ACTUALITÉS PAR MOTS-CLÉS
+    // filtre d'actualités par mot-clés
     public function findLikeName( string $name)
     {
         $queryBuilder = $this->createQueryBuilder('e')

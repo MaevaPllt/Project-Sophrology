@@ -26,21 +26,25 @@ class Event
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=255)
      */
     private ?string $name;
 
     /**
      * @ORM\Column(type="date", nullable=true)
+     * @Assert\Type("DateTime")
      */
     private ?\DateTimeInterface $date;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=false)
+     * @Assert\NotBlank()
      */
     private ?string $resume;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private ?string $poster = '';
 
@@ -58,7 +62,8 @@ class Event
     private ?DateTimeInterface $updatedAt;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=false)
+     * @Assert\NotBlank()
      */
     private ?string $content;
 
@@ -67,6 +72,7 @@ class Event
      * @ORM\JoinColumn(nullable=false)
      */
     private ?Category $category;
+
 
     public function getId(): ?int
     {
@@ -114,7 +120,7 @@ class Event
         return $this->poster;
     }
 
-    public function setPoster(? string $poster): self
+    public function setPoster(?string $poster): self
     {
         $this->poster = $poster;
 

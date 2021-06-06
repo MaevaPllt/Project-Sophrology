@@ -32,10 +32,10 @@ final class Version20210416152817 extends AbstractMigration
         $this->addSql('CREATE TABLE repport (id INT AUTO_INCREMENT NOT NULL, patient_id INT NOT NULL, message LONGTEXT NOT NULL, date DATE NOT NULL, INDEX IDX_25A5E28A6B899279 (patient_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE repport ADD CONSTRAINT FK_25A5E28A6B899279 FOREIGN KEY (patient_id) REFERENCES user (id)');
         $this->addSql('CREATE TABLE category (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE event (id INT AUTO_INCREMENT NOT NULL, category_id INT NOT NULL, name VARCHAR(255) NOT NULL, date DATE DEFAULT NULL, resume LONGTEXT NOT NULL, poster LONGTEXT NOT NULL, content LONGTEXT NOT NULL, INDEX IDX_3BAE0AA712469DE2 (category_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE event (id INT AUTO_INCREMENT NOT NULL, category_id INT NOT NULL, name VARCHAR(255) NOT NULL, date DATE DEFAULT NULL, resume LONGTEXT NOT NULL, poster LONGTEXT NULL, content LONGTEXT NOT NULL, INDEX IDX_3BAE0AA712469DE2 (category_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE event ADD CONSTRAINT FK_3BAE0AA712469DE2 FOREIGN KEY (category_id) REFERENCES category (id)');
         $this->addSql('ALTER TABLE event ADD updated_at DATETIME DEFAULT NULL');
-        $this->addSql('INSERT INTO category (name) VALUES ("Actualités"),("Ateliers"),("Evènements")');
+        $this->addSql('INSERT INTO category (name) VALUES ("Actualité"),("Atelier"),("Evènement")');
 
     }
 
