@@ -25,7 +25,7 @@
             </div>
             <p class="card-text">{{ event.resume|raw }}</p>
             <p class="card-text">{{ event.content|raw }}</p>
-            {% if event.category.name == "Ateliers" or event.category.name == "Evènements" %}
+            {% if event.category.name == "Atelier" or event.category.name == "Evènement" %}
                 {% if date(event.date) < date('now') %}
                     <div class="card-text font-weight-bold">
                         <img width="20em" height="20em" src="{{ asset('build/images/warn.svg') }}"
