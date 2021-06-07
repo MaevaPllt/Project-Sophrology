@@ -30,37 +30,38 @@ class EventRepository extends ServiceEntityRepository
               return $queryBuilder->getQuery()->getResult();
     }
 
-    // FILTRE SUR LES DATES LES PLUS RÉCENTES
-    public function getEventsDate()
+    // filtre sur les dernières actualités
+    public function getLastNews()
     {
         $queryBuilder = $this->createQueryBuilder("e")
             ->orderBy("e.date", "DESC")
             ->setMaxResults("3")
-            ;
+        ;
         return $queryBuilder->getQuery()->getResult();
     }
 
-    // CRÉATION D'UNE PAGINATION
-    public function getPaginatedEvents(int $page, $length)
-    {
-        $queryBuilder = $this->createQueryBuilder("p")
-            ->orderBy("p.date", "DESC")
-            ->setFirstResult(($page * $length) - $length )
-            ->setMaxResults($length)
-            ;
+        /*    // CRÉATION D'UNE PAGINATION
+            public function getPaginatedEvents(int $page, $length)
+            {
+                $queryBuilder = $this->createQueryBuilder("p")
+                    ->orderBy("p.date", "DESC")
+                    ->setFirstResult(($page * $length) - $length )
+                    ->setMaxResults($length)
+                    ;
 
-        return $queryBuilder->getQuery()->getResult();
+                return $queryBuilder->getQuery()->getResult();
 
-    }
+            }
 
-    // RÉCUPÉRATION DU NOMBRE D'ÉLÉMENTS POUR GÉRER LE NOMBRE DE PAGE
-    public function getCountEvents()
-    {
-        return $this->createQueryBuilder("p")
-            ->select("COUNT(p.id)")
-            ->getQuery()
-            ->getSingleScalarResult();
-    }
+            // RÉCUPÉRATION DU NOMBRE D'ÉLÉMENTS POUR GÉRER LE NOMBRE DE PAGE
+            public function getCountEvents()
+            {
+                return $this->createQueryBuilder("p")
+                    ->select("COUNT(p.id)")
+                    ->getQuery()
+                    ->getSingleScalarResult();
+            }
+    */
 
     // /**
     //  * @return Event[] Returns an array of Event objects

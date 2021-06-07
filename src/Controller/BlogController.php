@@ -8,6 +8,7 @@ use App\Form\SearchFilterType;
 use App\Form\SearchCategoryType;
 use App\Repository\CategoryRepository;
 use App\Repository\EventRepository;
+use DateTimeInterface;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

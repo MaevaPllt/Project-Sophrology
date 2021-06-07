@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use DateTimeInterface;
+use DateTime;
 
 
 class HomeController extends AbstractController
@@ -43,7 +45,7 @@ class HomeController extends AbstractController
         return $this->render("home/index.html.twig", [
             'testinesses' => $testinessRepository->findAll(),
             'form' => $form->createView(),
-            'events' => $eventRepository->getEventsDate(),
+            'events' => $eventRepository->getLastNews(),
         ]);
     }
 }

@@ -21,9 +21,9 @@ class AdminEventController extends AbstractController
      */
     public function index(Request $request, EventRepository $eventRepository): Response
     {
+        $events = $eventRepository->findAll();
         $form = $this->createForm(SearchFilterType::class);
         $form->handleRequest($request);
-        $events = $eventRepository->findAll();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $search = $form->getData()['search'];
@@ -54,6 +54,8 @@ class AdminEventController extends AbstractController
             $entityManager->persist($event);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Vos modifications ont bien été mises à jour !');
+
             return $this->redirectToRoute('admin_event_index');
         }
 
@@ -74,6 +76,8 @@ class AdminEventController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'Vos modifications ont bien été mises à jour !');
+
             return $this->redirectToRoute('admin_event_index');
         }
 
@@ -92,6 +96,8 @@ class AdminEventController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($event);
             $entityManager->flush();
+
+            $this->addFlash('success', 'Vos modifications ont bien été mises à jour !');
         }
 
         return $this->redirectToRoute('admin_event_index');

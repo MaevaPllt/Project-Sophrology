@@ -23,6 +23,7 @@ class IndividualType extends AbstractType
             ])
             ->add('posterFile', VichImageType::class, [
                 'label' => 'Image',
+                'required' => false,
             ])
         ;
     }

@@ -23,6 +23,7 @@ class CompanyType extends AbstractType
             ])
             ->add('posterFile', VichFileType::class, [
                 'label' => 'Image',
+                'required' => false,
             ])
         ;
     }

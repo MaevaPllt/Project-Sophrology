@@ -19,6 +19,7 @@ class ThemeType extends AbstractType
         $builder
             ->add('posterFile', VichFileType::class, [
                 'label' => 'Image',
+                'required' => false,
             ])
             ->add('name', TextType::class, [
                 'label' => 'Thème d\'accompagnement',
