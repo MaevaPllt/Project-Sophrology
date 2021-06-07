@@ -15,7 +15,7 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class EventType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('name', TextType::class, [
@@ -30,6 +30,7 @@ class EventType extends AbstractType
             ])
             ->add('posterFile', VichImageType::class, [
                 'label' => 'Image',
+                'required' => false,
             ])
             ->add('content', CKEditorType::class, [
                 'label' => 'Contenu de l\'actualité',
@@ -42,7 +43,7 @@ class EventType extends AbstractType
 
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => Event::class,

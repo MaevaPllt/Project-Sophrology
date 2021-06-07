@@ -33,7 +33,6 @@ class Event
 
     /**
      * @ORM\Column(type="date", nullable=true)
-     * @Assert\Type("DateTime")
      */
     private ?\DateTimeInterface $date;
 
