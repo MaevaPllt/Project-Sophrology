@@ -38,9 +38,10 @@
                     <p class="m-0 mt-3">{{ form_label(formEditUser.email) }}</p>
                     <p>{{ form_widget(formEditUser.email) }}</p>
                     <div class="d-flex justify-content-end">
-                    <button class="btn btn-light border-secondary"><p class="m-0">{{ 'Modifier' }}</p></button>
+                        <button class="btn btn-light border-secondary"><p class="m-0">{{ 'Modifier' }}</p></button>
                     </div>
                     {{ form_end(formEditUser) }}
+                    <span class="d-flex justify-content-end">{{ include('account_user/_delete_form.html.twig') }}</span>
                 </div>
             </div>
         </div>
