@@ -1,0 +1,52 @@
+{% extends 'layout.html.twig' %}
+{% form_theme resetForm 'bootstrap_4_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('login') }}
+{% endblock %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+    <section class="bg-secondary my-5 py-5">
+        <h1 class="text-center pb-4 text-white text-uppercase">Réinitialisation du mot de passe
+            <hr class="w-25 bg-info">
+        </h1>
+        <div class="row justify-content-center mx-0">
+            <div class="col-lg-4 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-4">
+                        <img class="logo" src="{{ asset('build/images/key.svg') }}" alt="logo-outils"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Étape 3: Nouveau mot de passe</h3>
+                            <p>Enregistrez un nouveau mot de passe pour tentez de vous reconnecter à nouveau.</p>
+                        </div>
+                    </div>
+                    <div class="justify-content-center">
+                        {{ form_start(resetForm) }}
+                        {{ form_widget(resetForm.plainPassword) }}
+                        <button class="btn btn-light border-secondary">Confirmer votre nouveau mot de passe</button>
+                        {{ form_end(resetForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const eye = document.querySelector(".eye");
+        const eyeoff = document.querySelector(".eye-off");
+        const passwordField = document.querySelector("input[type=password]");
+
+        eye.addEventListener("click", () => {
+            eye.style.display = "none";
+            eyeoff.style.display = "block";
+            passwordField.type = "text";
+        });
+
+        eyeoff.addEventListener("click", () => {
+            eyeoff.style.display = "none";
+            eye.style.display = "block";
+            passwordField.type = "password";
+        });
+    </script>
+{% endblock %}

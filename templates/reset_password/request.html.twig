@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+{% form_theme requestForm 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+    <section class="bg-secondary my-5 py-5">
+        <h1 class="text-center pb-4 text-white text-uppercase">Réinitialisation du mot de passe
+            <hr class="w-25 bg-info">
+        </h1>
+        <div class="row justify-content-center mx-0">
+            <div class="col-lg-4 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-4">
+                        <img class="w-25" src="{{ asset('build/images/email-security.svg') }}" alt="logo-outils"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold">Étape 1: Renseigner l'adresse Email</h3>
+                            <p class="card-text"> Entrez votre adresse e-mail pour recevoir
+                                un lien de réinitialisation pour votre mot de passe.
+                            </p>
+                        </div>
+                    </div>
+                    {{ form_start(requestForm) }}
+                    {{ form_row(requestForm.email) }}
+                    <button class="btn btn-light border-secondary">Envoyer la réinitialisation de mot de passe
+                        par e-mail
+                    </button>
+                    {{ form_end(requestForm) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
