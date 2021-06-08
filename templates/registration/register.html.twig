@@ -12,18 +12,21 @@
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
-    <section class="my-5 pt-3">
-        <h1 class=" text-center text-uppercase text-secondary mb-3">Espace Création de compte
+    <section class="my-5 py-5 bg-secondary">
+        <h1 class=" text-center text-uppercase text-light mb-3">Espace Création de compte
             <hr class="w-25 bg-info">
         </h1>
-        <div class="row justify-content-center mx-0 mx-2 my-5">
+        <div class="row justify-content-center mx-0 my-5">
             <div class="col-lg-4 m-4 p-2 bg-primary border">
-                <div class="d-flex justify-content-center mb-3">
-                    <img class="w-75 h-25" src="{{ asset('build/images/logo.png') }}"
-                         alt="logo-inspire-expire-sophrologie"/>
-                </div>
                 <div class="card-body">
-                    <h3 class=" mb-3">Créer un nouveau compte</h3>
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/new.svg') }}" alt="logo-outils"/>
+                        <div class="mx-4">
+                            <h3 class=" font-weight-bold mb-3">Créer un nouveau compte</h3>
+                            <p>Créez-vous un nouveau compte et devenez membre de Inspire & Expire Sophrologie !
+                            Vous pourrez y retrouvez tous vos comptes-rendus de vos séances, et réserver à l'avance vos séances.</p>
+                        </div>
+                    </div>
                     <div>
                         {{ form_start(registrationForm) }}
                     </div>
@@ -45,8 +48,9 @@
                             {{ form_widget(registrationForm.plainPassword) }}
                             <div class="mx-2">
                                 <img class="logo-eye eye-off align-self-center"
-                                     src="{{ asset('build/images/eye_off.svg') }}" alt="logo-oeil-barré"/>
-                                <img class="logo-eye eye align-self-center" src="{{ asset('build/images/eye.svg') }}"
+                                     src="{{ asset('build/images/padlock_off.svg') }}" alt="logo-oeil-barré"/>
+                                <img class="logo-eye eye align-self-center"
+                                     src="{{ asset('build/images/padlock.svg') }}"
                                      alt="logo-oeil-ouvert"/>
                             </div>
                         </div>
@@ -64,7 +68,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <a href="{{ path('home') }}" class="btn btn-secondary text-light">Retour au site</a>
+            <a href="{{ path('home') }}" class="btn btn-light border-secondary">Retour au site</a>
         </div>
     </section>
 {% endblock %}

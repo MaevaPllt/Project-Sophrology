@@ -36,6 +36,8 @@ final class Version20210416152817 extends AbstractMigration
         $this->addSql('ALTER TABLE event ADD CONSTRAINT FK_3BAE0AA712469DE2 FOREIGN KEY (category_id) REFERENCES category (id)');
         $this->addSql('ALTER TABLE event ADD updated_at DATETIME DEFAULT NULL');
         $this->addSql('INSERT INTO category (name) VALUES ("Actualités"),("Ateliers"),("Evènements")');
+        $this->addSql('CREATE TABLE reset_password_request (id INT AUTO_INCREMENT NOT NULL, user_id INT NOT NULL, selector VARCHAR(20) NOT NULL, hashed_token VARCHAR(100) NOT NULL, requested_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', expires_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', INDEX IDX_7CE748AA76ED395 (user_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE reset_password_request ADD CONSTRAINT FK_7CE748AA76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
 
     }
 
@@ -57,6 +59,8 @@ final class Version20210416152817 extends AbstractMigration
         $this->addSql('DROP TABLE event');
         $this->addSql('ALTER TABLE event DROP updated_at');
         $this->addSql('TRUNCATE TABLE category');
+        $this->addSql('DROP TABLE reset_password_request');
+        $this->addSql('ALTER TABLE reset_password_request DROP FOREIGN KEY FK_7CE748AA76ED395');
 
     }
 }
