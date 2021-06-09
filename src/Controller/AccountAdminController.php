@@ -8,8 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class AdminHomeController
- * @package App\Controller
  * @Route("/admin", name="admin_")
  */
 class AccountAdminController extends AbstractController
