@@ -17,12 +17,13 @@ class ThemeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+
+            ->add('name', TextType::class, [
+                'label' => 'Thème d\'accompagnement',
+            ])
             ->add('posterFile', VichFileType::class, [
                 'label' => 'Image',
                 'required' => false,
-            ])
-            ->add('name', TextType::class, [
-                'label' => 'Thème d\'accompagnement',
             ])
             ->add('description', CKEditorType::class, [
                 'label' => 'Contenu',
