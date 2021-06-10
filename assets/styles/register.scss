@@ -13,3 +13,16 @@
   display: none;
 }
 
+@media screen and (max-width: 1000px) {
+  .register-responsive {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .register-logo-responsive {
+    display: flex;
+    align-self: center;
+    margin-bottom: $spacing-2;
+  }
+}
+
