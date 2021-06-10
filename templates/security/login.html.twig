@@ -8,7 +8,7 @@
         <h1 class="text-center text-uppercase text-light mb-3">Espace connexion
             <hr class="w-25 bg-info">
         </h1>
-        <div class="row justify-content-center mx-0 my-5">
+        <div class="row  mx-0 justify-content-center my-5">
             <div class="col-lg-4 m-4 p-2 bg-primary border">
                 <div class="card-body">
                     <form method="post">
@@ -22,8 +22,8 @@
                                         href="{{ path('app_logout') }}">Se déconnecter</a>
                             </div>
                         {% endif %}
-                        <div class="d-flex justify-content-between mb-3">
-                            <img class="logo" src="{{ asset('build/images/connexion.svg') }}" alt="logo-outils"/>
+                        <div class="d-flex justify-content-between mb-3 login-responsive">
+                            <img class="logo login-logo-responsive" src="{{ asset('build/images/connexion.svg') }}" alt="logo-outils"/>
                             <div class="mx-4">
                                 <h3 class="card-text font-weight-bold">Se connecter à votre espace</h3>
                                 <p>Connectez-vous à votre espace personnel pour y retrouver les comptes-rendus de vos séances,

@@ -13,3 +13,18 @@
 .eye-off {
   display: none;
 }
+
+@media screen and (max-width: 1000px) {
+  .login-responsive {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-logo-responsive {
+    display: flex;
+    align-self: center;
+    margin-bottom: $spacing-2;
+  }
+}
+
+
