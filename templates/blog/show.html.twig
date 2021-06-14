@@ -26,19 +26,17 @@
             <p class="card-text">{{ event.resume|raw }}</p>
             <p class="card-text">{{ event.content|raw }}</p>
             {% if event.category.name == "Ateliers" or event.category.name == "Evènements" %}
-                {% if event.date < date('now') %}
-                    <div class="card-text font-weight-bold">
+                <div class="card-text font-weight-bold">
+                    {% if event.date < date('now') %}
                         <img width="20em" height="20em" src="{{ asset('build/images/warn.svg') }}"
                              alt="logo-information"/>
                         Date dépassée
-                    </div>
-                {% else %}
-                    <div class="card-text font-weight-bold">
+                    {% else %}
                         <img width="20em" height="20em" src="{{ asset('build/images/info.svg') }}"
                              alt="logo-information-icon"/>
                         Date à venir
-                    </div>
-                {% endif %}
+                    {% endif %}
+                </div>
             {% endif %}
         </div>
         <a class="btn btn-light border-secondary mx-4" href="{{ path('blog_index') }}">Retour au blog</a>
