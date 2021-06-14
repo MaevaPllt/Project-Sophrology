@@ -138,19 +138,17 @@
                             <p class="card-text font-weight-bold">{{ event.date is empty ? "" : event.date|date('d/m/Y') }}</p>
                         </div>
                         {% if event.category.name == "Ateliers" or event.category.name == "Evènements" %}
-                            {% if event.date < date('now') %}
-                                <div class="card-text font-weight-bold">
+                            <div class="card-text font-weight-bold">
+                                {% if event.date < date('now') %}
                                     <img width="20em" height="20em" src="{{ asset('build/images/warn.svg') }}"
                                          alt="logo-information"/>
                                     Date dépassée
-                                </div>
-                            {% else %}
-                                <div class="card-text font-weight-bold">
+                                {% else %}
                                     <img width="20em" height="20em" src="{{ asset('build/images/info.svg') }}"
                                          alt="logo-information-icon"/>
                                     Date à venir
-                                </div>
-                            {% endif %}
+                                {% endif %}
+                            </div>
                         {% endif %}
                         <p class="card-text">{{ event.resume|raw }}</p>
                         <a class="nav-link btn btn-secondary text-light mx-5"

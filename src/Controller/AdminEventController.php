@@ -18,6 +18,9 @@ class AdminEventController extends AbstractController
 {
     /**
      * @Route("/", name="admin_event_index" , methods={"GET","POST"})
+     * @param EventRepository $eventRepository
+     * @param Request $request
+     * @return Response
      */
     public function index(Request $request, EventRepository $eventRepository): Response
     {
@@ -29,8 +32,6 @@ class AdminEventController extends AbstractController
             $search = $form->getData()['search'];
             if (!empty($search)) {
                 $events = $eventRepository->findLikeName($search);
-            } else {
-                $events = $eventRepository->findAll();
             }
         }
 

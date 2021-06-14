@@ -10,7 +10,7 @@
 {% block body %}
     <section class="bg-secondary my-5 py-5">
         <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord de
-            <strong>{{ app.user.firstname }} {{ app.user.lastname }}</strong>
+            <strong class="text-info">{{ app.user.firstname }} {{ app.user.lastname }}</strong>
             <hr class="w-25 bg-info">
         </h1>
         <div class="row justify-content-center mx-0 mx-2">
@@ -41,11 +41,17 @@
                         <button class="btn btn-light border-secondary"><p class="m-0">{{ 'Modifier' }}</p></button>
                     </div>
                     {{ form_end(formEditUser) }}
-                    <span class="d-flex justify-content-end">{{ include('account_user/_delete_form.html.twig') }}</span>
+                    {% if app.user.roles == 'ROLE_USER' and app.user.roles != 'ROLE_ADMIN' %}
+                        <span class="d-flex justify-content-around ">{{ include('account_user/_delete_form.html.twig') }}</span>
+                    {% endif %}
                 </div>
             </div>
         </div>
-        <a class="btn btn-light border-secondary mx-4" href="{{ path('user_home') }}">Retour au Tableau de bord</a>
+        {%  if app.user.roles == 'ROLE_USER' and app.user.roles != 'ROLE_ADMIN' %}
+            <a class="btn btn-light border-secondary mx-4" href="{{ path('user_home') }}">Retour au Tableau de bord</a>
+        {% else %}
+            <a class="btn btn-light border-secondary mx-4" href="{{ path('admin_home') }}">Retour au Tableau de bord</a>
+        {% endif %}
     </section>
     {% include '_includes/_arrow_up.html.twig' %}
 {% endblock %}
