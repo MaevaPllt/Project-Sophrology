@@ -1,0 +1,38 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('account') }}
+{% endblock %}
+
+{% block title %}Espace Membre| {{ parent() }}{% endblock %}
+
+{% block body %}
+    <section class="bg-secondary my-5 py-5">
+        <h1 class="text-center pb-4 text-white text-uppercase">Tableau de bord de
+            <strong class="text-info">{{ app.user.firstname }} {{ app.user.lastname }}</strong>
+            <hr class="w-25 bg-info">
+        </h1>
+        <div class="row justify-content-center mx-0 mx-2">
+            <div class="col-lg-4 m-4 p-2 bg-primary border">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <img class="logo" src="{{ asset('build/images/repport.svg') }}" alt="logo-message"/>
+                        <div class="mx-4">
+                            <h3 class="card-text font-weight-bold mb-3">Mes comptes-rendus</h3>
+                            <p>Ici sont affichés vos comptes-rendus après séances. Votre sophrologue les rédige et les
+                            met à disposition pour que vous puissiez en prendre connaissance.</p>
+                        </div>
+                    </div>
+                    {% for repport in repports %}
+                        <a class="btn btn-light my-2" href="{{ path('user_repport_show',{'id' :repport.id} ) }}">
+                            Compte-rendus n°{{ repport.number }} en date du {{ repport.date is empty ? "" : repport.date|date('d/m/Y') }}
+                        </a>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-light border-secondary mx-4" href="{{ path('user_home') }}">Retour au Tableau de bord</a>
+    </section>
+    {% include '_includes/_arrow_up.html.twig' %}
+{% endblock %}

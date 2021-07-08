@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Repport;
 use App\Entity\User;
 use App\Form\UserType;
+use App\Repository\RepportRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -80,5 +82,27 @@ class AccountUserController extends AbstractController
         }
 
         return $this->redirectToRoute('home');
+    }
+
+    /**
+     * @Route("/comptes-rendus", name="repport", methods={"GET","POST"})
+     */
+    public function repportUser(RepportRepository $repportRepository): Response
+    {
+        $repports = $repportRepository->findBy(['patient' => $this->getUser()]);
+
+        return $this->render('account_user/repport_user.html.twig', [
+            'repports' => $repports,
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/", name="repport_show", methods={"GET","POST"})
+     */
+    public function show(Repport $repport): Response
+    {
+        return $this->render('account_user/show.html.twig', [
+            'repport' => $repport,
+        ]);
     }
 }

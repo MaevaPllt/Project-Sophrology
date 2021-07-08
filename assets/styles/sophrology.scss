@@ -32,13 +32,9 @@
 
 .container-sophro {
   .overlay-sophro {
-    position: absolute;
-    top: 0;
-    height: 90%;
-    width: 90%;
     opacity: 0;
   }
-  /* Overlay survol souris */
+  /* survol souris */
   &:hover .overlay-sophro {
     opacity: 1;
     transition: .5s ease;
@@ -48,7 +44,6 @@
     opacity: 1;
   }
 
-  /*Hover texte au survol */
   &:hover .title-card-sophro {
     opacity: 0;
     transition: .5s ease;
