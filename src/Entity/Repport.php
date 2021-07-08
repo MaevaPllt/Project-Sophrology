@@ -28,11 +28,15 @@ class Repport
     private ?\DateTimeInterface $date;
 
     /**
-     * @ORM\Column(type="string", length=255)
      * @ORM\ManyToOne(targetEntity=User::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
-    private ?User $patient;
+    private User $patient;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $number;
 
     public function getId(): ?int
     {
@@ -63,14 +67,26 @@ class Repport
         return $this;
     }
 
-    public function getPatient(): ?User
+    public function getPatient(): User
     {
         return $this->patient;
     }
 
-    public function setPatient(?User $patient): self
+    public function setPatient(User $patient): self
     {
         $this->patient = $patient;
+
+        return $this;
+    }
+
+    public function getNumber(): ?int
+    {
+        return $this->number;
+    }
+
+    public function setNumber(int $number): self
+    {
+        $this->number = $number;
 
         return $this;
     }

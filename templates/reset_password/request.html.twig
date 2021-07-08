@@ -1,7 +1,11 @@
 {% extends 'layout.html.twig' %}
 {% form_theme requestForm 'bootstrap_4_layout.html.twig' %}
 
-{% block title %}Reset your password{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('login') }}
+{% endblock %}
+
+{% block title %}Réinitialisation du mot de passe{% endblock %}
 
 {% block body %}
     {% for flashError in app.flashes('reset_password_error') %}

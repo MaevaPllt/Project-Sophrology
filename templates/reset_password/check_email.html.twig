@@ -1,6 +1,10 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Password Reset Email Sent{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('login') }}
+{% endblock %}
+
+{% block title %}Password Rénitialiser le mot de passe{% endblock %}
 
 {% block body %}
     <section class="bg-secondary my-5 py-5">
