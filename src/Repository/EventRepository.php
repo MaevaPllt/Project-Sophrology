@@ -19,7 +19,7 @@ class EventRepository extends ServiceEntityRepository
         parent::__construct($registry, Event::class);
     }
 
-    // filtre d'actualités par mot-clés
+    // filtre actualités admin
     public function findLikeName( string $name)
     {
         $queryBuilder = $this->createQueryBuilder('e')
@@ -30,7 +30,7 @@ class EventRepository extends ServiceEntityRepository
               return $queryBuilder->getQuery()->getResult();
     }
 
-    // filtre sur les dernières actualités
+    // filtre dernières actualités homepage
     public function getLastNews()
     {
         $queryBuilder = $this->createQueryBuilder("e")
@@ -40,7 +40,9 @@ class EventRepository extends ServiceEntityRepository
         return $queryBuilder->getQuery()->getResult();
     }
 
-        /*    // CRÉATION D'UNE PAGINATION
+    /*
+
+          // paginer les events
             public function getPaginatedEvents(int $page, $length)
             {
                 $queryBuilder = $this->createQueryBuilder("p")
@@ -53,7 +55,7 @@ class EventRepository extends ServiceEntityRepository
 
             }
 
-            // RÉCUPÉRATION DU NOMBRE D'ÉLÉMENTS POUR GÉRER LE NOMBRE DE PAGE
+            // récupération du nombre d'éléments pour gérer le nombre de pages
             public function getCountEvents()
             {
                 return $this->createQueryBuilder("p")
